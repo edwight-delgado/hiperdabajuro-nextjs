@@ -1,3 +1,10 @@
-export default function () {
-  return <h1>page categoria </h1>;
+interface Props {
+  params: {
+    slug: string;
+  };
+}
+
+export default function ({ params }: Props) {
+  const { slug } = params;
+  return <h1>page categoria {slug}</h1>;
 }
