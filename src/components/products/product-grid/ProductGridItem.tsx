@@ -1,10 +1,14 @@
 import { Product } from "@/interfaces/product.interface";
+import { useUIModalProductStore } from "@/store";
 import Image from "next/image";
 import Link from "next/link";
 interface Props {
   product: Product;
 }
 export const ProductGridItem = ({ product }: Props) => {
+  const openSideModalProduct = useUIModalProductStore(
+    (state) => state.openSideModalProduct
+  );
   return (
     <div className="w-full md:w-1/2 xl:w-1/3 px-4 mb-7">
       <div className="border border-solid border-gray-300 transition-all hover:shadow-product group relative">
@@ -27,7 +31,8 @@ export const ProductGridItem = ({ product }: Props) => {
             <ul className="flex items-center justify-center bg-white shadow rounded-full h-0 transition-all group-hover:h-16 duration-500 overflow-hidden">
               <li className="py-4 pl-7 md:py-5 md:pl-8">
                 <a
-                  href="#modal-cart"
+                  href="#"
+                  onClick={() => openSideModalProduct()}
                   className="text-dark flex items-center justify-center text-md hover:text-orange modal-toggle"
                   aria-label="quick view"
                   data-tippy-content="Quick View"
