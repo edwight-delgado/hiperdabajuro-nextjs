@@ -1,4 +1,9 @@
+"use client";
+
+import { useUIStore } from "@/store";
+
 export const TopMenu = () => {
+  const openSideMenu = useUIStore((state) => state.openSideMenu);
   return (
     <header id="sticky-header" className="">
       <div className="px-4 md:px-10 2xl:px-24 py-6 lg:py-0">
@@ -370,7 +375,8 @@ export const TopMenu = () => {
               </li>
               <li className="ml-6">
                 <a
-                  href="#offcanvas-cart"
+                  onClick={() => openSideMenu()}
+                  href="#"
                   className="text-primary text-md hover:text-orange transition-all relative offcanvas-toggle"
                 >
                   <span className="w-5 h-5 bg-dark text-white text-sm rounded-full font-normal flex flex-wrap items-center justify-center absolute -top-3 left-2 leading-none">

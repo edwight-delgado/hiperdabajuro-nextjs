@@ -4,7 +4,7 @@ import "../../../public/css/vendor/icofont.min.css";
 import "../../../public/css/vendor/line-awesome.min.css";
 import "../../../public/css/vendor/simple-line-icons.css";
 import "../../../public/css/style.css";
-import { TopMenu } from "@/components";
+import { Sidebar, TopMenu } from "@/components";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-poppins text-dark text-sm leading-loose`}>
         <TopMenu></TopMenu>
+        <Sidebar></Sidebar>
         {children}
       </body>
     </html>
