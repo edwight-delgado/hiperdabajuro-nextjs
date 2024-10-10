@@ -6,6 +6,7 @@ interface SeedProduct {
   slug: string;
   tags: string[];
   title: string;
+  category: string;
 }
 
 interface SeedData {
@@ -22,6 +23,7 @@ export const initialData: SeedData = {
       slug: "esddddd",
       title: "Batin crofessor pampden 1",
       tags: ["shirt"],
+      category: "categoria1",
     },
     {
       description: "desc n1",
@@ -31,6 +33,7 @@ export const initialData: SeedData = {
       slug: "esddddd",
       title: "Batin crofessor pampden 2",
       tags: ["shirt"],
+      category: "categoria2",
     },
     {
       description: "desc n1",
@@ -40,6 +43,7 @@ export const initialData: SeedData = {
       slug: "esddddd",
       title: "Batin crofessor pampden 3",
       tags: ["shirt"],
+      category: "categoria3",
     },
     {
       description: "desc n1",
@@ -49,6 +53,7 @@ export const initialData: SeedData = {
       slug: "esddddd",
       title: "Batin crofessor pampden 4",
       tags: ["shirt"],
+      category: "categoria1",
     },
   ],
 };

@@ -42,7 +42,7 @@ export const Sidebar = () => {
               <div className="mr-5 relative">
                 <a href="#">
                   <Image
-                    src="/../../../public/product/product1.webp"
+                    src={`/img/product/product1.webp`}
                     alt="product image"
                     loading="lazy"
                     width="90"

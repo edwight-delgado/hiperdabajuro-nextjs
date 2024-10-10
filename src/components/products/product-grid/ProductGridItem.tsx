@@ -17,7 +17,7 @@ export const ProductGridItem = ({ product }: Props) => {
           </span>
           <Image
             className="w-full h-full"
-            src={`/../../../public/product/${product.images[0]}`}
+            src={`/img/product/${product.images[0]}`}
             alt={product.title}
             width={432}
             height={480}
