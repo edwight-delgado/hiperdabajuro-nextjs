@@ -9,3 +9,5 @@ export * from "./ui/not-found/PageNotFound";
 export * from "./ui/modal/productModal";
 
 export * from "./product/quantity-selector/QuantitySelector";
+
+export * from "./sidebar-product/SidebarProduct";
