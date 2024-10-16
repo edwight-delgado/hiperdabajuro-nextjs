@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-poppins text-dark text-sm leading-loose`}>
         <TopMenu></TopMenu>
-
+        <MobileTopMenu></MobileTopMenu>
         <Sidebar></Sidebar>
         {children}
       </body>

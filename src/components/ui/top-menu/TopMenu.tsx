@@ -1,9 +1,12 @@
 "use client";
 
-import { useUIStore } from "@/store";
+import { useUIMobileMenuStore, useUIStore } from "@/store";
 
 export const TopMenu = () => {
   const openSideMenu = useUIStore((state) => state.openSideMenu);
+  const openSideMobileMenu = useUIMobileMenuStore(
+    (state) => state.openSideMobileMenu
+  );
   return (
     <header id="sticky-header" className="">
       <div className="px-4 md:px-10 2xl:px-24 py-6 lg:py-0">
@@ -452,12 +455,12 @@ export const TopMenu = () => {
                 </div>
               </li>
               <li className="ml-6 lg:hidden">
-                <a
-                  href="#offcanvas-mobile-menu"
+                <button
+                  onClick={() => openSideMobileMenu()}
                   className="offcanvas-toggle text-primary text-md hover:text-orange transition-all"
                 >
                   <i className="icon-menu"></i>
-                </a>
+                </button>
               </li>
             </ul>
           </div>
