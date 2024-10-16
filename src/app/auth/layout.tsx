@@ -5,7 +5,7 @@ import "../../../public/css/vendor/line-awesome.min.css";
 import "../../../public/css/vendor/simple-line-icons.css";
 import "../../../public/css/style.css";
 import { Sidebar, TopMenu } from "@/components";
-import MobileTopMenu from "@/components/ui/top-menu/mobileTopMenu";
+import Providers from "@/middleware/providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,7 +21,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-poppins text-dark text-sm leading-loose`}>
         <TopMenu></TopMenu>
-
         <Sidebar></Sidebar>
         {children}
       </body>
