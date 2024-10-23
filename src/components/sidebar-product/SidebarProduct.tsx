@@ -1,10 +1,17 @@
+import { initialData } from "@/app/seed/seed";
+
 export default function () {
+  //const categories = initialData.products.find((product) => product.category);
+  const categories = initialData.products
+    .map((item) => item.category)
+    .filter((value, index, self) => self.indexOf(value) === index);
+  console.log(categories);
   return (
     <div className="lg:w-1/4 px-4 order-last lg:order-first mt-8 lg:mt-0">
       <div>
         <div className="mb-12">
           <h4 className="font-medium text-md lg:text-lg text-dark capitalize mb-10">
-            Search
+            Busqueda
           </h4>
           <div className="pro-sidebar-search mb-50 mt-25">
             <form
@@ -32,9 +39,32 @@ export default function () {
 
         <div className="mb-12">
           <h4 className="font-medium text-md lg:text-lg text-dark capitalize mb-5">
-            Categories
+            Categorias
           </h4>
           <ul>
+            {categories.map((cat) => (
+              <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
+                <input
+                  className="checkbox opacity-0 absolute"
+                  id="checkbox-1"
+                  type="checkbox"
+                />
+                <label
+                  htmlFor="checkbox-1"
+                  className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
+                >
+                  {cat}
+                </label>
+                <a
+                  href="#"
+                  className="w-6 h-6 flex items-center justify-center rounded-full bg-gray-300 text-sm hover:text-white
+        hover:bg-orange transition-all"
+                >
+                  9
+                </a>
+              </li>
+            ))}
+
             <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
               <input
                 className="checkbox opacity-0 absolute"
@@ -138,233 +168,9 @@ export default function () {
           </ul>
         </div>
 
-        <div className="mb-12">
-          <h4 className="font-medium text-md lg:text-lg text-dark capitalize mb-8">
-            Vendors
-          </h4>
-
-          <ul>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-11"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-11"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                {" "}
-                Vendor 1{" "}
-              </label>
-            </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-21"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-21"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                {" "}
-                Vendor 10{" "}
-              </label>
-            </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-31"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-31"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                {" "}
-                Vendor 11{" "}
-              </label>
-            </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-41"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-41"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                Vendor 12
-              </label>
-            </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-51"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-51"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                Vendor 2{" "}
-              </label>
-            </li>
-          </ul>
-        </div>
-
-        <div className="mb-12">
-          <h4 className="font-medium text-md lg:text-lg text-dark capitalize mb-10">
-            Color
-          </h4>
-          <ul>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-12"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-12"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                red{" "}
-              </label>
-            </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-22"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-22"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                green{" "}
-              </label>
-            </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-32"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-32"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                blue{" "}
-              </label>
-            </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-42"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-42"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                yellow
-              </label>
-            </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-52"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-52"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                white{" "}
-              </label>
-            </li>
-          </ul>
-        </div>
-
-        <div className="mb-12">
-          <h4 className="font-medium text-md lg:text-lg text-dark capitalize mb-10">
-            Size
-          </h4>
-
-          <ul>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-13"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-13"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                s
-              </label>
-            </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-23"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-23"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                m
-              </label>
-            </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-33"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-33"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                l
-              </label>
-            </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-43"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-43"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                xl
-              </label>
-            </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-53"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-53"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                xxl
-              </label>
-            </li>
-          </ul>
-        </div>
-
         <div>
           <h4 className="font-medium text-md lg:text-lg text-dark capitalize mb-10">
-            Tags
+            Etiquetas
           </h4>
 
           <ul className="flex flex-wrap -m-1">

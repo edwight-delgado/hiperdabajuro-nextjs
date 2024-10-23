@@ -1,5 +1,3 @@
-"use client";
-
 import { initialData } from "../seed/seed";
 import { ProductGrid, ProductModal, TopBreadCrumb } from "@/components";
 import Providers from "@/middleware/providers";
@@ -15,7 +13,7 @@ export default function Home() {
 
         <ProductGrid products={products}></ProductGrid>
       </main>
-      <ProductModal slug="Batin-crofessor-pampden-2"></ProductModal>
+      <ProductModal></ProductModal>
     </div>
   );
 }

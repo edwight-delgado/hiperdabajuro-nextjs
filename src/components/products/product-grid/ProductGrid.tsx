@@ -16,7 +16,7 @@ export const ProductGrid = ({ products }: Props) => {
             <div className="flex flex-wrap -mb-7 -px-4">
               {products.map((product) => (
                 <ProductGridItem
-                  key={product.slug}
+                  key={product.id}
                   product={product}
                 ></ProductGridItem>
               ))}

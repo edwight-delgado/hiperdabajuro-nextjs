@@ -1,3 +1,4 @@
+"use client";
 import { useSession } from "next-auth/react";
 export const TopBreadCrumb = () => {
   const { data: session } = useSession();

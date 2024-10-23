@@ -1,5 +1,7 @@
 export interface Product {
-  //id:string;
+  id: number;
+  quantity?: number;
+  brand: string;
   description: string;
   images: string[];
   inStock: number;

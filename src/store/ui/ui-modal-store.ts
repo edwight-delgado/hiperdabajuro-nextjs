@@ -2,12 +2,19 @@ import { create } from "zustand";
 
 interface State {
   isSideModalProductOpen: boolean;
-  openSideModalProduct: () => void;
+  slugState: string;
+  openSideModalProduct: (slug: string) => void;
   closeSideModalProduct: () => void;
 }
 
 export const useUIModalProductStore = create<State>()((set) => ({
   isSideModalProductOpen: false,
-  openSideModalProduct: () => set({ isSideModalProductOpen: true }),
+  slugState: "",
+  openSideModalProduct: (slug) =>
+    set({
+      isSideModalProductOpen: true,
+      slugState: slug,
+    }),
+
   closeSideModalProduct: () => set({ isSideModalProductOpen: false }),
 }));

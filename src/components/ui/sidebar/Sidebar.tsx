@@ -1,17 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { useUIStore } from "@/store";
+import { useCartStore, useUIStore } from "@/store";
 import clsx from "clsx";
 import { initialData } from "@/app/seed/seed";
 import Link from "next/link";
+import useFromStore from "./useFromStore";
+import { use } from "react";
 
 export const Sidebar = () => {
-  const productIncart = [
-    initialData.products[0],
-    initialData.products[1],
-    initialData.products[2],
-  ];
+  const cart = useFromStore(useCartStore, (state) => state.cart);
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
+  let total = 0;
+  if (cart) {
+    total = cart.reduce(
+      (acc, product) => acc + product.price * (product.quantity as number),
+      0
+    );
+  }
+
   const isSideMenuOpen = useUIStore((state) => state.isSideMenuOpen);
   const closeMenu = useUIStore((state) => state.closeSideMenu);
 
@@ -49,7 +56,7 @@ export const Sidebar = () => {
           </div>
           <ul className="h-96 overflow-y-auto">
             {/* item */}
-            {productIncart.map((product) => (
+            {cart?.map((product) => (
               <li key={product.slug} className="flex flex-wrap group mb-8">
                 <div className="mr-5 relative">
                   <a href="#">
@@ -61,7 +68,10 @@ export const Sidebar = () => {
                       height="100"
                     />
                   </a>
-                  <button className="absolute top-3 left-3 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all hover:text-orange">
+                  <button
+                    onClick={() => removeFromCart(product)}
+                    className="absolute top-3 left-3 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all hover:text-orange"
+                  >
                     <i className="icon-close"></i>
                   </button>
                 </div>
@@ -75,102 +85,15 @@ export const Sidebar = () => {
                     </a>
                   </h4>
                   <span className="font-light text-sm text-dark transition-all tracking-wide">
-                    1 x <span>$80.00</span>
+                    ${product.quantity} x <span>$ ${product.price}</span>
                   </span>
                 </div>
               </li>
             ))}
-            <li className="flex flex-wrap group mb-8">
-              <div className="mr-5 relative">
-                <a href="#">
-                  <Image
-                    src={`/img/product/product1.webp`}
-                    alt="product image"
-                    loading="lazy"
-                    width="90"
-                    height="100"
-                  />
-                </a>
-                <button className="absolute top-3 left-3 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all hover:text-orange">
-                  <i className="icon-close"></i>
-                </button>
-              </div>
-              <div className="flex-1">
-                <h4>
-                  <a
-                    className="font-light text-sm md:text-base text-dark hover:text-orange transition-all tracking-wide"
-                    href="#"
-                  >
-                    Birpod product unsde - m / gold
-                  </a>
-                </h4>
-                <span className="font-light text-sm text-dark transition-all tracking-wide">
-                  1 x <span>$80.00</span>
-                </span>
-              </div>
-            </li>
-            <li className="flex flex-wrap group mb-8">
-              <div className="mr-5 relative">
-                <a href="/#">
-                  <Image
-                    src="/../../../public/product/product1.webp"
-                    alt="product image"
-                    loading="lazy"
-                    width="90"
-                    height="100"
-                  />
-                </a>
-                <button className="absolute top-3 left-3 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all hover:text-orange">
-                  <i className="icon-close"></i>
-                </button>
-              </div>
-              <div className="flex-1">
-                <h4>
-                  <a
-                    className="font-light text-sm md:text-base text-dark hover:text-orange transition-all tracking-wide"
-                    href="/#"
-                  >
-                    Airpod product kiebd - red
-                  </a>
-                </h4>
-                <span className="font-light text-sm text-dark transition-all tracking-wide">
-                  1 x <span>$99.00</span>
-                </span>
-              </div>
-            </li>
-            <li className="flex flex-wrap group mb-8">
-              <div className="mr-5 relative">
-                <a href="#">
-                  <Image
-                    src="/../../../public/product/product1.webp"
-                    alt="product image"
-                    loading="lazy"
-                    width="90"
-                    height="100"
-                  />
-                </a>
-                <button className="absolute top-3 left-3 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all hover:text-orange">
-                  <i className="icon-close"></i>
-                </button>
-              </div>
-              <div className="flex-1">
-                <h4>
-                  <a
-                    className="font-light text-sm md:text-base text-dark hover:text-orange transition-all tracking-wide"
-                    href="#"
-                  >
-                    Airpod product ides - navy
-                  </a>
-                </h4>
-                <span className="font-light text-sm text-dark transition-all tracking-wide">
-                  1 x <span>$39.00</span>
-                </span>
-              </div>
-            </li>
           </ul>
           <div>
             <div className="flex flex-wrap justify-between items-center py-4 my-6 border-t border-b border-solid border-gray-600 font-normal text-base text-dark capitalize">
-              Total:<span>$218.00</span>
+              Total:<span>$ ${total}</span>
             </div>
             <div className="text-center">
               <Link

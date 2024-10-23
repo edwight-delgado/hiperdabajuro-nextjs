@@ -1,16 +1,18 @@
+"use client";
 import { Product } from "@/interfaces/product.interface";
-import { useUIModalProductStore } from "@/store";
+import { useCartStore, useUIModalProductStore } from "@/store";
 import Image from "next/image";
 import Link from "next/link";
 interface Props {
   product: Product;
 }
 export const ProductGridItem = ({ product }: Props) => {
+  const addToCart = useCartStore((state) => state.addToCart);
   const openSideModalProduct = useUIModalProductStore(
     (state) => state.openSideModalProduct
   );
   return (
-    <div className="w-full md:w-1/2 xl:w-1/3 px-4 mb-7">
+    <div key={product.id} className="w-full md:w-1/2 xl:w-1/3 px-4 mb-7">
       <div className="border border-solid border-gray-300 transition-all hover:shadow-product group relative">
         <div className="relative overflow-hidden">
           <span className="font-medium uppercase text-sm text-black inline-block py-1 px-2 leading-none absolute top-3 right-3">
@@ -32,7 +34,7 @@ export const ProductGridItem = ({ product }: Props) => {
               <li className="py-4 pl-7 md:py-5 md:pl-8">
                 <a
                   href="#"
-                  onClick={() => openSideModalProduct()}
+                  onClick={() => openSideModalProduct(product.slug)}
                   className="text-dark flex items-center justify-center text-md hover:text-orange modal-toggle"
                   aria-label="quick view"
                   data-tippy-content="Quick View"
@@ -62,7 +64,8 @@ export const ProductGridItem = ({ product }: Props) => {
               </li>
               <li className="py-4 pl-7 pr-7 md:py-5 md:pl-8 md:pr-8">
                 <a
-                  href="#modal-addto-cart"
+                  onClick={() => addToCart(product)}
+                  href="#"
                   className="text-dark flex items-center justify-center text-md hover:text-orange modal-toggle"
                   aria-label="add to cart"
                   data-tippy-content="Add to cart"
