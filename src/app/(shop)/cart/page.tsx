@@ -1,13 +1,25 @@
-import { initialData } from "@/app/seed/seed";
+"use client";
 import { QuantitySelector } from "@/components";
+import { useCartStore } from "@/store";
 import Image from "next/image";
+import TotalProductsCart from "@/middleware/totalProductsCart";
+import { useState } from "react";
 
 export default function () {
-  const products = [
-    initialData.products[0],
-    initialData.products[1],
-    initialData.products[2],
-  ];
+  const cart = useCartStore((state) => state.cart);
+  const RemoveItem = useCartStore((state) => state.removeFromCart);
+  //const products = initialData.products
+  let total = 0;
+  total = TotalProductsCart(cart);
+
+  function handleGetQuantity(quantity: number) {
+    if (total < 1) {
+      return;
+    }
+    const [nquantity, setQuantity] = useState(quantity);
+    setQuantity(nquantity);
+  }
+
   return (
     <>
       <div className="py-24">
@@ -38,8 +50,8 @@ export default function () {
                   </tr>
                 </thead>
                 <tbody>
-                  {products.map((product) => (
-                    <tr>
+                  {cart.map((product) => (
+                    <tr key={product.id}>
                       <td className="w-32 p-3 border border-solid border-gray-600 text-center">
                         <a href="#">
                           <Image
@@ -64,10 +76,13 @@ export default function () {
                         </span>
                       </td>
                       <td className="p-3 border border-solid border-gray-600 text-center">
-                        <QuantitySelector quantity={2}></QuantitySelector>
+                        <QuantitySelector
+                          quantity={product.quantity}
+                          onGetQuantity={handleGetQuantity}
+                        ></QuantitySelector>
                       </td>
                       <td className="p-3 border border-solid border-gray-600 text-center">
-                        <span>$30</span>
+                        <span>${product.price * product.quantity}</span>
                       </td>
                       <td className="p-3 border border-solid border-gray-600 text-center">
                         <a
@@ -77,6 +92,7 @@ export default function () {
                           <i className="icon-pencil"></i>
                         </a>
                         <a
+                          onClick={() => RemoveItem(product)}
                           href="#"
                           className="inline-block mx-1 hover:text-orange transition-all"
                         >
@@ -181,7 +197,7 @@ export default function () {
                   <ul className="flex flex-wrap items-center justify-between">
                     <li className="text-base font-semibold">Total</li>
                     <li className="text-base font-semibold text-orange">
-                      $329
+                      ${total}
                     </li>
                   </ul>
                 </div>

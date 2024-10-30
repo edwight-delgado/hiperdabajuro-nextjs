@@ -11,6 +11,7 @@ export const ProductGridItem = ({ product }: Props) => {
   const openSideModalProduct = useUIModalProductStore(
     (state) => state.openSideModalProduct
   );
+  product["quantity"] = 1;
   return (
     <div key={product.id} className="w-full md:w-1/2 xl:w-1/3 px-4 mb-7">
       <div className="border border-solid border-gray-300 transition-all hover:shadow-product group relative">

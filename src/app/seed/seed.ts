@@ -3,6 +3,7 @@ interface SeedProduct {
   description: string;
   images: string[];
   inStock: number;
+  quantity: number;
   price: number;
   slug: string;
   tags: string[];
@@ -23,6 +24,7 @@ export const initialData: SeedData = {
         "desc n1 All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,",
       images: ["product1.webp", "image2", "image3"],
       inStock: 7,
+      quantity: 0,
       price: 20,
       slug: "Batin-crofessor-pampden-1",
       title: "Batin crofessor pampden 1",
@@ -36,6 +38,7 @@ export const initialData: SeedData = {
         "desc n2 All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,",
       images: ["product2.webp", "image2", "image3"],
       inStock: 7,
+      quantity: 0,
       price: 34,
       slug: "Batin-crofessor-pampden-2",
       title: "Batin crofessor pampden 2",
@@ -49,6 +52,7 @@ export const initialData: SeedData = {
         "desc n3 All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,",
       images: ["product1.webp", "image2", "image3"],
       inStock: 7,
+      quantity: 0,
       price: 44,
       slug: "esddddd",
       title: "Batin crofessor pampden 3",
@@ -62,6 +66,7 @@ export const initialData: SeedData = {
         "desc n4 All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,",
       images: ["product2.webp", "image2", "image3"],
       inStock: 7,
+      quantity: 0,
       price: 10,
       slug: "Batin-crofessor-pampden-4",
       title: "Batin crofessor pampden 4",

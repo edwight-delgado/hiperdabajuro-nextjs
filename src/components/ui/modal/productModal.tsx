@@ -3,7 +3,6 @@ import { initialData } from "@/app/seed/seed";
 import { QuantitySelector } from "@/components/product/quantity-selector/QuantitySelector";
 import { useCartStore, useUIModalProductStore } from "@/store";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 
 export const ProductModal = () => {
   //const slug = "Batin-crofessor-pampden-1";
@@ -21,15 +20,22 @@ export const ProductModal = () => {
 
   if (!product) {
     //page no found
-    notFound();
+    return;
+  }
+  product["quantity"] = 1;
+  function handleGetQuantity(quantity: number) {
+    if (!product) {
+      return;
+    }
+    product["quantity"] = quantity;
+    console.log(product);
   }
   return (
     <>
       {isSideModalProductOpen && (
-        <>
+        <div key={product.id}>
           <div className="modal-overlay fixed inset-0 bg-black opacity-50 z-10"></div>
           <div
-            key={product.id}
             id="modal-cart"
             className="modal fixed opacity-0 transition-opacity duration-300 ease-linear md:w-11/12 md:max-w-1000 hidden z-40 left-8 right-8 md:left-1/2 top-1/2 transform -translate-y-1/2 md:-translate-x-1/2 p-7 bg-white modal-open"
           >
@@ -70,7 +76,10 @@ export const ProductModal = () => {
                 </select>
 
                 <div className="flex flex-wrap items-center mt-8">
-                  <QuantitySelector quantity={1}></QuantitySelector>
+                  <QuantitySelector
+                    quantity={1}
+                    onGetQuantity={handleGetQuantity}
+                  ></QuantitySelector>
                   <div className="ml-2 sm:ml-8">
                     <button
                       onClick={() => addToCart(product)}
@@ -83,7 +92,7 @@ export const ProductModal = () => {
               </div>
             </div>
           </div>
-        </>
+        </div>
       )}
     </>
   );

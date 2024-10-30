@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function () {
   const { data: session } = useSession();
-  console.log(session);
+
   return (
     <div className="container">
       <div className="grid grid-cols-12 gap-x-5">
@@ -15,10 +15,10 @@ export default function () {
               <li className="mx-2">
                 <Link
                   className="font-semibold py-3 px-5 leading-none uppercase transition-all hover:text-orange  text-base md:text-md"
-                  href="/ahuth/login"
+                  href="/auth/login"
                 >
                   login
-                </Link>{" "}
+                </Link>
                 <span className="inline-block ml-2">|</span>
               </li>
               <li className="mx-2 active">
@@ -26,7 +26,7 @@ export default function () {
                   className="font-semibold py-3 px-5 leading-none uppercase transition-all hover:text-orange  text-base md:text-md"
                   href="/auth/register"
                 >
-                  register
+                  Registro
                 </Link>
               </li>
             </ul>

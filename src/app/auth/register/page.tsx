@@ -1,8 +1,10 @@
-import { FacebookLogin, GoogleLogin } from "@/components";
-import Providers from "@/middleware/providers";
+"use client";
+import { GoogleLogin } from "@/components";
+import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
 
 export default function () {
+  const { data: session } = useSession();
   return (
     <div className="container">
       <div className="grid grid-cols-12 gap-x-5">
@@ -15,7 +17,7 @@ export default function () {
                   href="/auth/login"
                 >
                   login
-                </Link>{" "}
+                </Link>
                 <span className="inline-block ml-2">|</span>
               </li>
               <li className="mx-2 active">
@@ -23,13 +25,13 @@ export default function () {
                   className="font-semibold py-3 px-5 leading-none uppercase transition-all hover:text-orange  text-base md:text-md"
                   href="/auth/register"
                 >
-                  register
+                  Registro
                 </Link>
               </li>
             </ul>
 
             <div>
-              <div id="register" className="custom-tab-content">
+              <div id="login" className="custom-tab-content">
                 <div className="p-8 md:p-20 shadow max-w-4xl mx-auto">
                   <form action="#" method="post">
                     <input
@@ -44,27 +46,31 @@ export default function () {
                       name="user-password"
                       placeholder="Password"
                     />
-                    <input
-                      className="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base"
-                      name="user-email"
-                      placeholder="Email"
-                      type="email"
-                    />
                     <div className="button-box">
+                      <div className="mb-4">
+                        <input id="remember" type="checkbox" />
+                        <label htmlFor="remember" className="cursor-pointer">
+                          Remember me
+                        </label>
+                        <span>Or</span>
+                        <a
+                          href="#"
+                          className="inline-block mx-2 text-orange"
+                          onClick={() => signIn()}
+                        >
+                          Forgot Password?
+                        </a>
+                      </div>
                       <a
                         href="#"
                         className="inline-block leading-none uppercase text-white text-sm bg-dark px-5 py-4 transition-all hover:bg-orange"
                       >
-                        <span>Register</span>
+                        <span>Login</span>
                       </a>
                     </div>
                   </form>
-                  <div className="grid grid-flow-cols ms:grid-cols-1 gap-4 md:grid-cols-2 justify-stretch">
-                    <Providers>
-                      <GoogleLogin title="Sign up with Google"></GoogleLogin>
-                      <FacebookLogin title="Sign up with Facebook"></FacebookLogin>
-                    </Providers>
-                  </div>
+
+                  <GoogleLogin title="Sign in with Google"></GoogleLogin>
                 </div>
               </div>
             </div>

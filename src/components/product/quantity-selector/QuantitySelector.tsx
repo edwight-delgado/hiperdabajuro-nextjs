@@ -3,12 +3,17 @@ import { useState } from "react";
 
 interface Props {
   quantity: number;
+  onGetQuantity: (quantity: number) => void;
 }
-export const QuantitySelector = ({ quantity }: Props) => {
+
+export const QuantitySelector = ({ quantity, onGetQuantity }: Props) => {
   const [count, setCount] = useState(quantity);
   const onQuantityChange = (value: number) => {
-    if (count + value < 1) return;
+    if (count + value < 1) {
+      return;
+    }
     setCount(count + value);
+    onGetQuantity(count + value);
   };
   return (
     <div className="flex count border border-solid border-gray-300 p-2 h-11">

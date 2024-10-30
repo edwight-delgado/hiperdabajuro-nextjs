@@ -43,7 +43,10 @@ export default function () {
           </h4>
           <ul>
             {categories.map((cat) => (
-              <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
+              <li
+                key={cat}
+                className="mb-5 flex justify-between items-center transition-all hover:text-orange"
+              >
                 <input
                   className="checkbox opacity-0 absolute"
                   id="checkbox-1"

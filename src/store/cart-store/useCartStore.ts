@@ -6,7 +6,7 @@ interface Product {
   description: string;
   images: string[];
   inStock: number;
-  quantity?: number;
+  quantity: number;
   price: number;
   slug: string;
   tags: string[];
@@ -40,11 +40,11 @@ export const useCartStore = create(
       addToCart: (product: Product) => {
         const cart = get().cart;
         const cartItem = cart.find((item) => item.id === product.id);
-
+        const quantity = product.quantity;
         if (cartItem) {
           const updatedCart = cart.map((item) =>
             item.id === product.id
-              ? { ...item, quantity: (item.quantity as number) + 1 }
+              ? { ...item, quantity: (item.quantity as number) + quantity }
               : item
           );
           set((state) => ({

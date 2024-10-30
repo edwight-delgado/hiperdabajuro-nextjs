@@ -1,6 +1,7 @@
 "use client";
 
 import { useUIMobileMenuStore } from "@/store";
+import Link from "next/link";
 
 export default function MobileTopMenu() {
   const closeSideMobileMenu = useUIMobileMenuStore(
@@ -68,311 +69,24 @@ export default function MobileTopMenu() {
                           Airpod
                         </a>
                       </li>
-                      <li>
-                        <a
-                          className="text-sm py-2 px-4 text-dark font-light block font-roboto transition-all hover:text-orange"
-                          href="index-2.html"
-                        >
-                          Smartwatch
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-sm py-2 px-4 text-dark font-light block font-roboto transition-all hover:text-orange"
-                          href="index-3.html"
-                        >
-                          Drone
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-sm py-2 px-4 text-dark font-light block font-roboto transition-all hover:text-orange"
-                          href="index-4.html"
-                        >
-                          BackPack
-                        </a>
-                      </li>
                     </ul>
                   </li>
+
                   <li className="relative block">
-                    <span className="menu-expand"></span>
-                    <a
+                    <Link
                       href="#"
-                      className="block capitalize font-normal text-base my-2 py-1 font-roboto"
-                    >
-                      Shop
-                    </a>
-                    <ul className="offcanvas-submenu static top-auto hidden w-full visible opacity-100">
-                      <li>
-                        <span className="menu-expand"></span>
-                        <a
-                          className="text-sm py-2 px-4 text-dark font-light block font-roboto transition-all hover:text-orange"
-                          href="#"
-                        >
-                          Shop Grid
-                        </a>
-                        <ul className="offcanvas-submenu static top-auto hidden w-full visible opacity-100">
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="shop-grid-3-column.html"
-                            >
-                              Shop Grid 3 Column
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="shop-grid-4-column.html"
-                            >
-                              Shop Grid 4 Column
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="shop-grid-left-sidebar.html"
-                            >
-                              Shop Grid Left Sidebar
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="shop-grid-right-sidebar.html"
-                            >
-                              shop Grid Right Sidebar
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <span className="menu-expand"></span>
-                        <a
-                          className="text-sm py-2 px-4 text-dark font-light block font-roboto transition-all hover:text-orange"
-                          href="#"
-                        >
-                          shop list
-                        </a>
-                        <ul className="offcanvas-submenu static top-auto hidden w-full visible opacity-100">
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="shop-list.html"
-                            >
-                              Shop List
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="shop-list-left-sidebar.html"
-                            >
-                              Shop List Left Sidebar
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="shop-list-right-sidebar.html"
-                            >
-                              Shop List right Sidebar
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <span className="menu-expand"></span>
-                        <a
-                          className="text-sm py-2 px-4 text-dark font-light block font-roboto transition-all hover:text-orange"
-                          href="#"
-                        >
-                          blogs
-                        </a>
-                        <ul className="offcanvas-submenu static top-auto hidden w-full visible opacity-100">
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="blog-grid-3-column.html"
-                            >
-                              Blog Grid 3 Column
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="blog-grid-4-column.html"
-                            >
-                              Blog Grid 4 Column
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="blog-grid-left-sidebar.html"
-                            >
-                              Blog Grid Left Sidebar
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="blog-grid-right-sidebar.html"
-                            >
-                              Blog Grid Right Sidebar
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <span className="menu-expand"></span>
-                        <a
-                          className="text-sm py-2 px-4 text-dark font-light block font-roboto transition-all hover:text-orange"
-                          href="#"
-                        >
-                          Product Types
-                        </a>
-                        <ul className="offcanvas-submenu static top-auto hidden w-full visible opacity-100">
-                          <li>
-                            <a
-                              className="text-sm py-2 px-4 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="single-product.html"
-                            >
-                              Shop Single
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm py-2 px-4 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="single-product-configurable.html"
-                            >
-                              Shop Variable
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm py-2 px-4 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="single-product-affiliate.html"
-                            >
-                              Shop Affiliate
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm py-2 px-4 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="single-product-group.html"
-                            >
-                              Shop Group
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="relative block">
-                    <span className="menu-expand"></span>
-                    <a
-                      href="#"
-                      className="block capitalize font-normal text-base my-2 py-1 font-roboto"
-                    >
-                      Blog
-                    </a>
-                    <ul className="offcanvas-submenu static top-auto hidden w-full visible opacity-100">
-                      <li>
-                        <span className="menu-expand"></span>
-                        <a
-                          className="text-sm py-2 px-4 text-dark font-light block font-roboto transition-all hover:text-orange"
-                          href="#"
-                        >
-                          Blog Grid
-                        </a>
-                        <ul className="offcanvas-submenu static top-auto hidden w-full visible opacity-100">
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="blog-grid-3-column.html"
-                            >
-                              Blog Grid 3 column
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="blog-grid-2-column.html"
-                            >
-                              Blog Grid 2 column
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="blog-grid-left-sidebar.html"
-                            >
-                              Blog Grid Left Sidebar
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="blog-grid-right-sidebar.html"
-                            >
-                              Blog Grid Right Sidebar
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <span className="menu-expand"></span>
-                        <a
-                          className="text-sm py-2 px-4 text-dark font-light block font-roboto transition-all hover:text-orange"
-                          href="#"
-                        >
-                          Blog List
-                        </a>
-                        <ul className="offcanvas-submenu static top-auto hidden w-full visible opacity-100">
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="blog-list-left-sidebar.html"
-                            >
-                              Blog List Left Sidebar
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="blog-list-right-sidebar.html"
-                            >
-                              Blog List Right Sidebar
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              className="text-sm pt-3 px-10 pb-1 text-dark font-light block font-roboto transition-all hover:text-orange"
-                              href="blog-details.html"
-                            >
-                              Blog details
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="relative block">
-                    <a
-                      href="about-us.html"
                       className="relative block capitalize font-normal text-base my-2 py-1 font-roboto"
                     >
                       Salir
-                    </a>
+                    </Link>
                   </li>
                   <li className="relative block">
-                    <a
-                      href="contact.html"
+                    <Link
+                      href="/auth/regiter"
                       className="relative block capitalize font-normal text-base my-2 py-1 font-roboto"
                     >
                       Login
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>

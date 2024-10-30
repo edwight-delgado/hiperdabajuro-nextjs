@@ -85,7 +85,8 @@ export const Sidebar = () => {
                     </a>
                   </h4>
                   <span className="font-light text-sm text-dark transition-all tracking-wide">
-                    ${product.quantity} x <span>$ ${product.price}</span>
+                    {product.quantity} x <span> ${product.price}</span> ={" "}
+                    <strong>{product.price * product.quantity}</strong>
                   </span>
                 </div>
               </li>
