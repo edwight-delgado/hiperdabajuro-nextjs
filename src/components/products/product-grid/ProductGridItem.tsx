@@ -13,132 +13,120 @@ export const ProductGridItem = ({ product }: Props) => {
   );
   product["quantity"] = 1;
   return (
-    <div key={product.id} className="w-full md:w-1/2 xl:w-1/3 px-4 mb-7">
-      <div className="border border-solid border-gray-300 transition-all hover:shadow-product group relative">
-        <div className="relative overflow-hidden">
-          <span className="font-medium uppercase text-sm text-black inline-block py-1 px-2 leading-none absolute top-3 right-3">
-            Sale
-          </span>
-          <span className="font-medium uppercase text-sm text-black inline-block py-1 px-2 leading-none absolute top-10 right-3">
-            -11%
-          </span>
-          <Image
-            className="w-full h-full"
-            src={`/img/product/${product.images[0]}`}
-            alt={product.title}
-            width={432}
-            height={480}
-          />
-
-          <div className="absolute left-2/4 top-2/4 transform -translate-x-2/4 -translate-y-2/4 z-10">
-            <ul className="flex items-center justify-center bg-white shadow rounded-full h-0 transition-all group-hover:h-16 duration-500 overflow-hidden">
-              <li className="py-4 pl-7 md:py-5 md:pl-8">
-                <a
-                  href="#"
-                  onClick={() => openSideModalProduct(product.slug)}
-                  className="text-dark flex items-center justify-center text-md hover:text-orange modal-toggle"
-                  aria-label="quick view"
-                  data-tippy-content="Quick View"
-                >
-                  <i className="icon-magnifier"></i>
-                </a>
-              </li>
-              <li className="py-4 pl-7 md:py-5 md:pl-8">
-                <a
-                  href="whishlist.html"
-                  className="text-dark flex items-center justify-center text-md hover:text-orange"
-                  aria-label="quick veiw"
-                  data-tippy-content="Add to wishlist"
-                >
-                  <i className="icon-heart"></i>
-                </a>
-              </li>
-              <li className="py-4 pl-7 md:py-5 md:pl-8">
-                <a
-                  href="compare.html"
-                  className="text-dark flex items-center justify-center text-md hover:text-orange"
-                  aria-label="compare"
-                  data-tippy-content="Compare"
-                >
-                  <i className="icon-refresh"></i>
-                </a>
-              </li>
-              <li className="py-4 pl-7 pr-7 md:py-5 md:pl-8 md:pr-8">
+    <div key={product.id} className="col1">
+      <div className="card-product card">
+        <div className="card-body">
+          <div className="text-center position-relative">
+            <a href="#" onClick={() => openSideModalProduct(product.slug)}>
+              <Image
+                src={`/img/products/${product.images[0]}`}
+                alt={product.title}
+                width={220}
+                height={220}
+                className="mb-3 img-fluid"
+              />
+            </a>
+            <div className="text-small mb-1">
+              <a className="text-decoration-none text-muted" href="#!">
+                <small>{product.categoryName}</small>
+              </a>
+            </div>
+            <h2 className="fs-6">
+              <Link
+                className="text-inherit text-decoration-none"
+                href={product.slug}
+              >
+                {product.title}
+              </Link>
+            </h2>
+            <div className="d-inline-flex gap-1 align-items-center ">
+              <small className="text-warning">
+                <div className="d-flex gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    width="12"
+                    height="12"
+                    fill="currentColor"
+                    className="bi bi-star-fill text-warning"
+                  >
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    width="12"
+                    height="12"
+                    fill="currentColor"
+                    className="bi bi-star-fill text-warning"
+                  >
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    width="12"
+                    height="12"
+                    fill="currentColor"
+                    className="bi bi-star-fill text-warning"
+                  >
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    width="12"
+                    height="12"
+                    fill="currentColor"
+                    className="bi bi-star-fill text-warning"
+                  >
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    width="12"
+                    height="12"
+                    fill="currentColor"
+                    className="bi bi-star-half text-warning"
+                  >
+                    <path d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"></path>
+                  </svg>
+                </div>
+              </small>
+              <span className="text-muted small">4.3 (4)</span>
+            </div>
+            <div className="d-flex justify-content-between align-items-center mt-3">
+              <div>
+                <span className="text-dark">$ {product.price} </span>
+                <span className="text-dark">| Bsf 24</span>
+              </div>
+              <div>
                 <a
                   onClick={() => addToCart(product)}
-                  href="#"
-                  className="text-dark flex items-center justify-center text-md hover:text-orange modal-toggle"
-                  aria-label="add to cart"
-                  data-tippy-content="Add to cart"
+                  role="button"
+                  href="#!"
+                  className="btn btn-primary btn-sm btn btn-primary"
                 >
-                  <i className="icon-bag"></i>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>{" "}
+                  Añadir
                 </a>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
-
-          <div className="p-2 bg-gray-200 shadow absolute left-2 right-2 -bottom-40 group-hover:bottom-2 z-20 transition-all duration-500 ease-linear">
-            <ul className="flex flex-wrap items-center justify-center mb-3">
-              <li className="mx-1 leading-none">
-                <button className="text-sm">sm</button>
-              </li>
-              <li className="mx-1 leading-none">
-                <button className="text-sm">l</button>
-              </li>
-              <li className="mx-1 leading-none">
-                <button className="text-sm">m</button>
-              </li>
-              <li className="mx-1 leading-none">
-                <button className="text-sm">xl</button>
-              </li>
-              <li className="mx-1 leading-none">
-                <button className="text-sm">xxl</button>
-              </li>
-            </ul>
-            <ul className="flex flex-wrap items-center justify-center">
-              <li className="mx-1 leading-none">
-                <button
-                  className="w-4 h-4 rounded-full bg-orange"
-                  aria-label="colors"
-                ></button>
-              </li>
-              <li className="mx-1 leading-none">
-                <button
-                  className="w-4 h-4 rounded-full bg-primary"
-                  aria-label="variants"
-                ></button>
-              </li>
-              <li className="mx-1 leading-none">
-                <button
-                  className="w-4 h-4 rounded-full bg-indigo-600"
-                  aria-label="variants"
-                ></button>
-              </li>
-              <li className="mx-1 leading-none">
-                <button
-                  className="w-4 h-4 rounded-full bg-dark"
-                  aria-label="variants"
-                ></button>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="py-5 px-4">
-          <h4>
-            <Link
-              className="block text-base hover:text-orange transition-all"
-              href={product.slug}
-            >
-              {product.title}
-            </Link>
-          </h4>
-          <h5 className="font-bold text-md leading-none text-orange mt-3">
-            <del className="font-normal text-sm mr-1 inline-block">
-              ${product.price}
-            </del>
-            $130.00
-          </h5>
         </div>
       </div>
     </div>

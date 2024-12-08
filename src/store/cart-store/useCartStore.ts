@@ -1,3 +1,4 @@
+import { initialData } from "@/app/seed/seed";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -16,17 +17,20 @@ interface Product {
 
 interface State {
   cart: Product[];
+  qty: number;
   totalItems: number;
   totalPrice: number;
 }
 
 interface Actions {
   addToCart: (Item: Product) => void;
+  updateQuantity: (Item: Product, qty: number) => void;
   removeFromCart: (Item: Product) => void;
 }
 
 const INITIAL_STATE: State = {
   cart: [],
+  qty: 0,
   totalItems: 0,
   totalPrice: 0,
 };
@@ -37,10 +41,13 @@ export const useCartStore = create(
       cart: INITIAL_STATE.cart,
       totalItems: INITIAL_STATE.totalItems,
       totalPrice: INITIAL_STATE.totalPrice,
+      qty: INITIAL_STATE.qty,
       addToCart: (product: Product) => {
         const cart = get().cart;
         const cartItem = cart.find((item) => item.id === product.id);
+
         const quantity = product.quantity;
+
         if (cartItem) {
           const updatedCart = cart.map((item) =>
             item.id === product.id
@@ -60,6 +67,22 @@ export const useCartStore = create(
             totalItems: state.totalItems + 1,
             totalPrice: state.totalPrice + product.price,
           }));
+        }
+      },
+      updateQuantity(product: Product, qty: number) {
+        const cart = get().cart;
+        const cartItem = product.id;
+
+        const quantity = product.quantity + qty;
+        if (cartItem) {
+          if (quantity >= 1) {
+            const updatedCart = [...cart, { ...product, quantity: 1 }];
+            set((state) => ({
+              //cart: updatedCart,
+
+              totalPrice: state.totalPrice + product.price * quantity,
+            }));
+          }
         }
       },
       removeFromCart: (product: Product) => {

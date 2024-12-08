@@ -1,11 +1,13 @@
 import { initialData } from "@/app/seed/seed";
+import { preinit } from "react-dom";
 
 export default function () {
   //const categories = initialData.products.find((product) => product.category);
   const categories = initialData.products
     .map((item) => item.category)
     .filter((value, index, self) => self.indexOf(value) === index);
-  console.log(categories);
+  const tags = initialData.products.map((item) => item.tags);
+
   return (
     <div className="lg:w-1/4 px-4 order-last lg:order-first mt-8 lg:mt-0">
       <div>
@@ -39,31 +41,34 @@ export default function () {
 
         <div className="mb-12">
           <h4 className="font-medium text-md lg:text-lg text-dark capitalize mb-5">
-            Categorias
+            {categories ? <p>Categorias </p> : "Categorias No Disponible"}
           </h4>
           <ul>
             {categories.map((cat) => (
-              <li
-                key={cat}
-                className="mb-5 flex justify-between items-center transition-all hover:text-orange"
-              >
-                <input
-                  className="checkbox opacity-0 absolute"
-                  id="checkbox-1"
-                  type="checkbox"
-                />
-                <label
-                  htmlFor="checkbox-1"
-                  className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-                >
-                  {cat}
-                </label>
+              <li key={cat}>
                 <a
-                  href="#"
-                  className="w-6 h-6 flex items-center justify-center rounded-full bg-gray-300 text-sm hover:text-white
-        hover:bg-orange transition-all"
+                  href={`/category/${cat}`}
+                  className="mb-5 flex justify-between items-center transition-all hover:text-orange"
                 >
-                  9
+                  <input
+                    className="checkbox opacity-0 absolute"
+                    id="checkbox-1"
+                    type="checkbox"
+                  />
+
+                  <label
+                    htmlFor="checkbox-1"
+                    className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
+                  >
+                    {cat}
+                  </label>
+
+                  <div
+                    className="w-6 h-6 flex items-center justify-center rounded-full bg-gray-300 text-sm hover:text-white
+        hover:bg-orange transition-all"
+                  >
+                    9
+                  </div>
                 </a>
               </li>
             ))}
@@ -108,66 +113,6 @@ export default function () {
                 8
               </a>
             </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-3"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-3"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                Drone{" "}
-              </label>
-              <a
-                href="#"
-                className="w-6 h-6 flex items-center justify-center rounded-full bg-gray-300 text-sm hover:text-white
-        hover:bg-orange transition-all"
-              >
-                7
-              </a>
-            </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-4"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-4"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                Fourth option
-              </label>
-              <a
-                href="#"
-                className="w-6 h-6 flex items-center justify-center rounded-full bg-gray-300 text-sm hover:text-white
-        hover:bg-orange transition-all"
-              >
-                7
-              </a>
-            </li>
-            <li className="mb-5 flex justify-between items-center transition-all hover:text-orange">
-              <input
-                className="checkbox opacity-0 absolute"
-                id="checkbox-5"
-                type="checkbox"
-              />
-              <label
-                htmlFor="checkbox-5"
-                className="relative cursor-pointer behtmlFore:empty behtmlFore:inline-block behtmlFore:w-5 behtmlFore:h-5 behtmlFore:bg-white behtmlFore:border-2 behtmlFore:border-solid behtmlFore:border-gray-300 behtmlFore:rounded behtmlFore:mr-4 align-middle flex items-center"
-              >
-                Smartwatch{" "}
-              </label>
-              <a
-                href="#"
-                className="w-6 h-6 flex items-center justify-center rounded-full bg-gray-300 text-sm hover:text-white
-        hover:bg-orange transition-all"
-              >
-                7
-              </a>
-            </li>
           </ul>
         </div>
 
@@ -177,110 +122,17 @@ export default function () {
           </h4>
 
           <ul className="flex flex-wrap -m-1">
-            <li className="m-1">
-              <a
-                href="#"
-                className="bg-gray-light leading-none py-3 px-5 block text-sm transition-all hover:text-white hover:bg-orange"
-              >
-                black
-              </a>
-            </li>
-            <li className="m-1">
-              <a
-                href="#"
-                className="bg-gray-light leading-none py-3 px-5 block text-sm transition-all hover:text-white hover:bg-orange"
-              >
-                blue
-              </a>
-            </li>
-            <li className="m-1">
-              <a
-                href="#"
-                className="bg-gray-light leading-none py-3 px-5 block text-sm transition-all hover:text-white hover:bg-orange"
-              >
-                fiber
-              </a>
-            </li>
-            <li className="m-1">
-              <a
-                href="#"
-                className="bg-gray-light leading-none py-3 px-5 block text-sm transition-all hover:text-white hover:bg-orange"
-              >
-                gold
-              </a>
-            </li>
-            <li className="m-1">
-              <a
-                href="#"
-                className="bg-gray-light leading-none py-3 px-5 block text-sm transition-all hover:text-white hover:bg-orange"
-              >
-                gray
-              </a>
-            </li>
-            <li className="m-1">
-              <a
-                href="#"
-                className="bg-gray-light leading-none py-3 px-5 block text-sm transition-all hover:text-white hover:bg-orange"
-              >
-                green
-              </a>
-            </li>
-            <li className="m-1">
-              <a
-                href="#"
-                className="bg-gray-light leading-none py-3 px-5 block text-sm transition-all hover:text-white hover:bg-orange"
-              >
-                l
-              </a>
-            </li>
-            <li className="m-1">
-              <a
-                href="#"
-                className="bg-gray-light leading-none py-3 px-5 block text-sm transition-all hover:text-white hover:bg-orange"
-              >
-                leather
-              </a>
-            </li>
-            <li className="m-1">
-              <a
-                href="#"
-                className="bg-gray-light leading-none py-3 px-5 block text-sm transition-all hover:text-white hover:bg-orange"
-              >
-                m
-              </a>
-            </li>
-            <li className="m-1">
-              <a
-                href="#"
-                className="bg-gray-light leading-none py-3 px-5 block text-sm transition-all hover:text-white hover:bg-orange"
-              >
-                magenta
-              </a>
-            </li>
-            <li className="m-1">
-              <a
-                href="#"
-                className="bg-gray-light leading-none py-3 px-5 block text-sm transition-all hover:text-white hover:bg-orange"
-              >
-                maroon
-              </a>
-            </li>
-            <li className="m-1">
-              <a
-                href="#"
-                className="bg-gray-light leading-none py-3 px-5 block text-sm transition-all hover:text-white hover:bg-orange"
-              >
-                metal
-              </a>
-            </li>
-            <li className="m-1">
-              <a
-                href="#"
-                className="bg-gray-light leading-none py-3 px-5 block text-sm transition-all hover:text-white hover:bg-orange"
-              >
-                navy
-              </a>
-            </li>
+            {tags.map((tag) => (
+              <li className="m-1">
+                <a
+                  href="#"
+                  className="bg-gray-light leading-none py-3 px-5 block text-sm transition-all hover:text-white hover:bg-orange"
+                >
+                  {tag[0]}
+                </a>
+              </li>
+            ))}
+
             <li className="m-1">
               <a
                 href="#"

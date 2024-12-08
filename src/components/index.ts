@@ -1,10 +1,10 @@
 export * from "./products/product-grid/ProductGrid";
 
-export * from "./ui/sidebar/Sidebar";
+export * from "./cart/shopping-cart";
 
 export * from "./ui/top-menu/TopMenu";
 
-export * from "./ui/top-menu/mobileTopMenu";
+export * from "./ui/top-menu/nav";
 
 export * from "./ui/not-found/PageNotFound";
 
@@ -17,3 +17,15 @@ export * from "./sidebar-product/SidebarProduct";
 export * from "./ui/social-media-auth";
 
 export * from "./ui/breadcrumb/TopBreadCrumb";
+
+export * from "./ui/dropzone/dropzone";
+
+export * from "./ui/editor/Wysiwyg";
+
+export * from "./dashboard/sidebar/sidebarLayout";
+
+export * from "./search/search";
+
+export * from "./ui/quantity/quantity";
+
+export * from "./checkout/address";

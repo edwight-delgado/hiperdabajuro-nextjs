@@ -5,6 +5,7 @@ import Link from "next/link";
 import LoginButton from "./LoginButton";
 import Providers from "@/middleware/providers";
 import TotalProductsCart from "@/middleware/totalProductsCart";
+import Search from "@/components/search/search";
 
 export const TopMenu = () => {
   const openSideMenu = useUIStore((state) => state.openSideMenu);
@@ -13,85 +14,147 @@ export const TopMenu = () => {
   );
   const cart = useCartStore((state) => state.cart);
   let total = TotalProductsCart(cart);
+
   return (
-    <header id="sticky-header" className="">
-      <div className="px-4 md:px-10 2xl:px-24 py-6 lg:py-0">
-        <div className="flex items-center lg:relative">
-          <div className="w-6/12 lg:w-2/12">
-            <div className="logo">
-              <Link href="/"></Link>
+    <header className="py-lg-5 py-4 px-0 border-bottom border-bottom-lg-0">
+      <div className="container-fluid">
+        <div className="w-100 align-items-center g-0 gx-lg-3 row">
+          <div className="col-xxl-9 col-lg-8">
+            <div className="d-flex align-items-center">
+              <a className="d-none d-lg-block navbar-brand" href="/">
+                <img
+                  src="/img/logo/freshcart-logo.svg"
+                  alt="Fresh Cart"
+                  className=""
+                />
+              </a>
+              <div className="w-100 ms-4 d-none d-lg-block">
+                <Search></Search>
+              </div>
+            </div>
+            <div className="d-flex justify-content-between w-100 d-lg-none">
+              <a className="navbar-brand" href="/">
+                <img
+                  src="/img/logo/freshcart-logo.svg"
+                  alt="Fresh Cart"
+                  className=""
+                />
+              </a>
+              <div className="d-flex align-items-center lh-1">
+                <div className="list-inline me-4">
+                  <div role="button" className="list-inline-item me-3">
+                    <a className="text-muted" href="">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                    </a>
+                  </div>
+                  <div role="button" className="list-inline-item">
+                    <a
+                      className="text-muted position-relative"
+                      href="#"
+                      onClick={() => openSideMenu()}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                      </svg>
+                      <span className="custom-badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                        {cart?.length}
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  aria-label="Toggle navigation"
+                  className="navbar-toggler collapsed"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    width="32"
+                    height="32"
+                    fill="currentColor"
+                    className="bi bi-text-indent-left text-primary"
+                  >
+                    <path d="M2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m.646 2.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L4.293 8 2.646 6.354a.5.5 0 0 1 0-.708M7 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m-5 3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"></path>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
-          <div className="hidden lg:flex flex-1 xl:relative">
-            <nav className="main-menu">
-              <ul className="flex flex-wrap">
-                <li className="main-menu__item relative group">
-                  <Link
-                    className="block py-10 xl:pr-6 md:pr-5 capitalize font-normal text-md text-primary hover:text-orange transition-all"
-                    href="/"
+          <div className="d-flex align-items-center col-xxl-3 col-lg-4">
+            <div className="list-inline ms-auto d-lg-block d-none">
+              <div className="text-reset list-inline-item me-6">
+                <a className="text-reset" href="">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                   >
-                    Inicio
-                  </Link>
-                </li>
-
-                <li className="main-menu__item relative group">
-                  <a
-                    className="block py-10 xl:px-6 md:px-5 capitalize font-normal text-md text-primary hover:text-orange transition-all"
-                    href="#"
-                  >
-                    Actención al Cliente
-                  </a>
-                </li>
-                <li className="main-menu__item relative group">
-                  <a
-                    className="block py-10 xl:px-6 md:px-5 capitalize font-normal text-md text-primary hover:text-orange transition-all"
-                    href="#"
-                  >
-                    Oferta
-                  </a>
-                </li>
-                <Providers>
-                  <LoginButton></LoginButton>
-                </Providers>
-              </ul>
-            </nav>
-          </div>
-
-          <div className="w-6/12 lg:w-3/12">
-            <ul className="flex items-center justify-end">
-              <li className="ml-6 hidden lg:block">
-                <button
-                  className="search-toggle text-right text-primary text-md hover:text-orange transition-all"
-                  aria-label="icon-settings"
-                >
-                  <i className="icon-magnifier"></i>
-                </button>
-              </li>
-              <li className="ml-6">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </a>
+              </div>
+              <div className="list-inline-item">
                 <a
-                  onClick={() => openSideMenu()}
+                  className="text-reset position-relative"
                   href="#"
-                  className="text-primary text-md hover:text-orange transition-all relative offcanvas-toggle"
+                  onClick={() => openSideMenu()}
                 >
-                  <span className="w-5 h-5 bg-dark text-white text-sm rounded-full font-normal flex flex-wrap items-center justify-center absolute -top-3 left-2 leading-none">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+
+                  <span className="custom-badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                    {" "}
                     {cart?.length}
                   </span>
-                  <i className="icon-bag"></i>
-                  <span className="text-base leading-none text-dark mx-3">
-                    ${total}
-                  </span>
                 </a>
-              </li>
-
-              <li className="ml-6 lg:hidden">
-                <button
-                  onClick={() => openSideMobileMenu()}
-                  className="offcanvas-toggle text-primary text-md hover:text-orange transition-all"
-                >
-                  <i className="icon-menu"></i>
-                </button>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

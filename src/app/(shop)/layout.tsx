@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "../../../public/css/vendor/icofont.min.css";
-import "../../../public/css/vendor/line-awesome.min.css";
-import "../../../public/css/vendor/simple-line-icons.css";
-import "../../../public/css/style.css";
-import { Sidebar, TopMenu } from "@/components";
-import MobileTopMenu from "@/components/ui/top-menu/mobileTopMenu";
+import "../globals.css";
+import { TopMenu } from "@/components";
+import NavMenu from "@/components/ui/top-menu/nav";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,9 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-poppins text-dark text-sm leading-loose`}>
         <TopMenu></TopMenu>
-        <MobileTopMenu></MobileTopMenu>
-        <Sidebar></Sidebar>
-        {children}
+        <NavMenu></NavMenu>
+        <main>{children}</main>
       </body>
     </html>
   );

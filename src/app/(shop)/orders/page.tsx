@@ -1,395 +1,333 @@
 export default function () {
   return (
-    <div className="py-24">
-      <main className="container">
-        <div
-          id="shoptab"
-          className="grid grid-cols-12 gap-y-5 lg:gap-y-0 gap-x-5"
-        >
-          <div className="col-span-12 lg:col-span-4">
-            <ul className="shop-tab-nav account-nav flex flex-wrap flex-col">
-              <li>
-                <a
-                  className="font-medium py-4 px-5 leading-none uppercase transition-all hover:text-white hover:bg-orange  text-base border-t border-l border-r border-gray-600 block"
-                  href="#dashboad"
+    <section>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <div className="d-flex justify-content-between align-items-center d-md-none py-4">
+              <h3 className="fs-5 mb-0">Account Setting</h3>
+              <button
+                type="button"
+                className="text-muted d-md-none btn-icon btn-sm ms-3 btn btn-outline-gray-400"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                  height="1em"
+                  fill="currentColor"
+                  className="bi bi-text-indent-left fs-3"
                 >
-                  dashboad
-                </a>
-              </li>
-              <li className="active">
-                <a
-                  className="font-medium py-4 px-5 leading-none uppercase transition-all hover:text-white hover:bg-orange  text-base border-t border-l border-r border-gray-600 block"
-                  href="#orders"
-                >
-                  orders
-                </a>
-              </li>
-              <li>
-                <a
-                  className="font-medium py-4 px-5 leading-none uppercase transition-all hover:text-white hover:bg-orange  text-base border-t border-l border-r border-gray-600 block"
-                  href="#download"
-                >
-                  download
-                </a>
-              </li>
-              <li>
-                <a
-                  className="font-medium py-4 px-5 leading-none uppercase transition-all hover:text-white hover:bg-orange  text-base border-t border-l border-r border-gray-600 block"
-                  href="#payment-method"
-                >
-                  payment method
-                </a>
-              </li>
-              <li>
-                <a
-                  className="font-medium py-4 px-5 leading-none uppercase transition-all hover:text-white hover:bg-orange  text-base border-t border-l border-r border-gray-600 block"
-                  href="#address"
-                >
-                  address
-                </a>
-              </li>
-              <li className="">
-                <a
-                  className="font-medium py-4 px-5 leading-none uppercase transition-all hover:text-white hover:bg-orange  text-base border-t border-l border-r border-gray-600 block"
-                  href="#account"
-                >
-                  {" "}
-                  Account Details
-                </a>
-              </li>
-              <li>
-                <a
-                  className="font-medium py-4 px-5 leading-none uppercase transition-all hover:text-white hover:bg-orange  text-base border-t border-l border-r border-b border-gray-600 block"
-                  href="login-register.html"
-                >
-                  Logout
-                </a>
-              </li>
-            </ul>
+                  <path d="M2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m.646 2.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L4.293 8 2.646 6.354a.5.5 0 0 1 0-.708M7 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m-5 3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"></path>
+                </svg>
+              </button>
+            </div>
           </div>
-          <div className="col-span-12 lg:col-span-8">
-            <div>
-              <div id="dashboad" className="shop-tab-content">
-                <div className="p-8 border border-gray-600">
-                  <h3 className="font-semibold text-md lg:text-lg capitalize pb-5 mb-5 border-b border-gray-600 leading-none">
-                    Dashboard
-                  </h3>
-                  <p>
-                    Hello, <strong>Alex Tuntuni</strong> (If Not
-                    <strong>Tuntuni ! </strong>
-                    <a
-                      href="login-register.html"
-                      className="transition-all hover:text-orange"
+          <div className="border-end d-none d-md-block col-lg-3 col-md-4 col-12">
+            <div className="pt-10 pe-lg-10">
+              <ul className="flex-column nav-pills-dark nav nav-pills">
+                <li className="nav-item">
+                  <a
+                    data-rr-ui-event-key="/user/account-orders"
+                    className="d-flex align-items-center gap-1 nav-link active"
+                    href="/user/account-orders"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="me-2"
                     >
-                      Logout
-                    </a>
-                    )
-                  </p>
-                  <p>
-                    From your account dashboard. you can easily check &amp; view
-                    your recent orders, manage your shipping and billing
-                    addresses and edit your password and account details.
-                  </p>
-                </div>
-              </div>
-              <div id="orders" className="shop-tab-content">
-                <div className="p-8 border border-gray-600">
-                  <h3 className="font-semibold text-md lg:text-lg capitalize pb-5 mb-5 border-b border-gray-600 leading-none">
-                    Orders
-                  </h3>
-
-                  <div className="overflow-x-auto">
-                    <table className="w-full min-w-max">
-                      <thead>
-                        <tr>
-                          <th className="bg-gray-light text-center border border-solid border-gray-600 p-3 font-semibold text-base">
-                            No
-                          </th>
-                          <th className="bg-gray-light text-center border border-solid border-gray-600 p-3 font-semibold text-base">
-                            Name
-                          </th>
-                          <th className="bg-gray-light text-center border border-solid border-gray-600 p-3 font-semibold text-base">
-                            Date
-                          </th>
-                          <th className="bg-gray-light text-center border border-solid border-gray-600 p-3 font-semibold text-base">
-                            Status
-                          </th>
-                          <th className="bg-gray-light text-center border border-solid border-gray-600 p-3 font-semibold text-base">
-                            Total
-                          </th>
-                          <th className="bg-gray-light text-center border border-solid border-gray-600 p-3 font-semibold text-base">
-                            Action
-                          </th>
-                        </tr>
-                      </thead>
-
-                      <tbody>
-                        <tr>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            1
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            Mostarizing Oil
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            Aug 22, 2018
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            Pending
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            $45
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            <a
-                              href="shopping-cart.html"
-                              className="ht-btn black-btn"
-                            >
-                              View
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            2
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            Katopeno Altuni
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            July 22, 2018
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            Approved
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            $100
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            <a
-                              href="shopping-cart.html"
-                              className="ht-btn black-btn"
-                            >
-                              View
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            3
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            Murikhete Paris
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            June 12, 2017
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            On Hold
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            $99
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            <a
-                              href="shopping-cart.html"
-                              className="ht-btn black-btn"
-                            >
-                              View
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div id="download" className="shop-tab-content">
-                <div className="p-8 border border-gray-600">
-                  <h3 className="font-semibold text-md lg:text-lg capitalize pb-5 mb-5 border-b border-gray-600 leading-none">
-                    Downloads
-                  </h3>
-                  <div className="overflow-x-auto">
-                    <table className="w-full min-w-max">
-                      <thead>
-                        <tr>
-                          <th className="bg-gray-light text-center border border-solid border-gray-600 p-3 font-semibold text-base">
-                            Product
-                          </th>
-                          <th className="bg-gray-light text-center border border-solid border-gray-600 p-3 font-semibold text-base">
-                            Date
-                          </th>
-                          <th className="bg-gray-light text-center border border-solid border-gray-600 p-3 font-semibold text-base">
-                            Expire
-                          </th>
-                          <th className="bg-gray-light text-center border border-solid border-gray-600 p-3 font-semibold text-base">
-                            Download
-                          </th>
-                        </tr>
-                      </thead>
-
-                      <tbody>
-                        <tr>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            Mostarizing Oil
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            Aug 22, 2018
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            Yes
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            <a href="#" className="ht-btn black-btn">
-                              Download File
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            Katopeno Altuni
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            Sep 12, 2018
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            Never
-                          </td>
-                          <td className="text-center border border-solid border-gray-600 py-5 px-3 align-middle">
-                            <a href="#" className="ht-btn black-btn">
-                              Download File
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div id="payment-method" className="shop-tab-content">
-                <div className="p-8 border border-gray-600">
-                  <h3 className="font-semibold text-md lg:text-lg capitalize pb-5 mb-5 border-b border-gray-600 leading-none">
-                    Payment Method
-                  </h3>
-                  <p className="font-medium p-4">
-                    You Can't Saved Your Payment Method yet.{" "}
-                  </p>
-                </div>
-              </div>
-              <div id="address" className="shop-tab-content">
-                <div className="p-8 border border-gray-600">
-                  <h3 className="font-semibold text-md lg:text-lg capitalize pb-5 mb-5 border-b border-gray-600 leading-none">
-                    Billing Address
-                  </h3>
-
-                  <address className="not-italic">
-                    <p>
-                      <strong>Alex Tuntuni</strong>
-                    </p>
-                    <p>
-                      1355 Market St, Suite 900 <br />
-                      San Francisco, CA 94103
-                    </p>
-                    <p>Mobile: (123) 456-7890</p>
-                  </address>
-
-                  <a href="#" className="transition-all hover:text-orange">
-                    Edit Address
+                      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                      <line x1="3" y1="6" x2="21" y2="6"></line>
+                      <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>{" "}
+                    Your Orders
                   </a>
-                </div>
-              </div>
-              <div id="account" className="shop-tab-content active">
-                <div className="p-8 border border-gray-600">
-                  <h3 className="font-semibold text-md lg:text-lg capitalize pb-5 mb-5 border-b border-gray-600 leading-none">
-                    Account Details
-                  </h3>
-                  <form action="#">
-                    <div className="grid grid-cols-12 gap-x-5">
-                      <div className="col-span-12 lg:col-span-6 mb-5">
-                        <input
-                          className="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base"
-                          id="first-name"
-                          placeholder="First Name"
-                          type="text"
-                        />
-                      </div>
-
-                      <div className="col-span-12 lg:col-span-6 mb-5">
-                        <input
-                          className="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base"
-                          id="last-name"
-                          placeholder="Last Name"
-                          type="text"
-                        />
-                      </div>
-
-                      <div className="col-span-12 mb-5">
-                        <input
-                          className="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base"
-                          id="display-name"
-                          placeholder="Display Name"
-                          type="text"
-                        />
-                      </div>
-
-                      <div className="col-span-12 mb-5">
-                        <input
-                          className="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base"
-                          id="email"
-                          placeholder="Email Address"
-                          type="email"
-                        />
-                      </div>
-
-                      <div className="col-span-12 mb-5">
-                        <h4 className="font-semibold text-base capitalize">
-                          Password change
-                        </h4>
-                      </div>
-
-                      <div className="col-span-12 mb-5">
-                        <input
-                          className="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base"
-                          id="current-pwd"
-                          placeholder="Current Password"
-                          type="password"
-                        />
-                      </div>
-
-                      <div className="col-span-12 lg:col-span-6 mb-5">
-                        <input
-                          className="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base"
-                          id="new-pwd"
-                          placeholder="New Password"
-                          type="password"
-                        />
-                      </div>
-
-                      <div className="col-span-12 lg:col-span-6 mb-5">
-                        <input
-                          className="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base"
-                          id="confirm-pwd"
-                          placeholder="Confirm Password"
-                          type="password"
-                        />
-                      </div>
-
-                      <div className="col-span-12">
-                        <button
-                          className="inline-block leading-none uppercase text-white text-sm bg-dark px-5 py-5 transition-all hover:bg-orange"
-                          aria-label="Save Changes"
-                        >
-                          Save Changes
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+                </li>
+                <li className="nav-item">
+                  <a
+                    data-rr-ui-event-key="/user/account-settings"
+                    className="d-flex align-items-center gap-1 nav-link"
+                    href="/user/account-settings"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="me-2"
+                    >
+                      <circle cx="12" cy="12" r="3"></circle>
+                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>{" "}
+                    Settings
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    data-rr-ui-event-key="/user/account-address"
+                    className="d-flex align-items-center gap-1 nav-link"
+                    href="/user/account-address"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="me-2"
+                    >
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>{" "}
+                    Address
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    data-rr-ui-event-key="/user/account-payment-method"
+                    className="d-flex align-items-center gap-1 nav-link"
+                    href="/user/account-payment-method"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="me-2"
+                    >
+                      <rect
+                        x="1"
+                        y="4"
+                        width="22"
+                        height="16"
+                        rx="2"
+                        ry="2"
+                      ></rect>
+                      <line x1="1" y1="10" x2="23" y2="10"></line>
+                    </svg>{" "}
+                    Payment Method
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    data-rr-ui-event-key="/user/account-notification"
+                    className="d-flex align-items-center gap-1 nav-link"
+                    href="/user/account-notification"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="me-2"
+                    >
+                      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                      <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>{" "}
+                    Notification
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <hr />
+                </li>
+                <li className="nav-item">
+                  <a
+                    href="/"
+                    data-rr-ui-event-key="/"
+                    className="d-flex align-items-center gap-1 nav-link"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="me-2"
+                    >
+                      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                      <polyline points="16 17 21 12 16 7"></polyline>
+                      <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    Log out
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="col-lg-9 col-md-8 col-12">
+            <div className="py-6 p-md-6 p-lg-10">
+              <h2 className="mb-6">Your Orders</h2>
+              <div className="table-responsive-xxl border-0">
+                <table
+                  id="example"
+                  className="text-nowrap table-centered mt-0 table"
+                >
+                  <thead className="bg-light">
+                    <tr>
+                      <th>
+                        <div className=""></div>
+                      </th>
+                      <th>
+                        <div className="">Product</div>
+                      </th>
+                      <th>
+                        <div className="">Order</div>
+                      </th>
+                      <th>
+                        <div className="">Date</div>
+                      </th>
+                      <th>
+                        <div className="">Items</div>
+                      </th>
+                      <th>
+                        <div className="">Status</div>
+                      </th>
+                      <th>
+                        <div className="">Amount</div>
+                      </th>
+                      <th>
+                        <div className=""></div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="align-middle border-top-0">
+                        <a href="">
+                          <img
+                            src="img/products/product-img-1.jpg"
+                            alt=""
+                            className="icon-shape icon-xl"
+                          />
+                        </a>
+                      </td>
+                      <td className="align-middle border-top-0">
+                        <a className="fw-semibold text-inherit" href="">
+                          <h6 className="mb-0">
+                            Haldiram's Nagpur Aloo Bhujia
+                          </h6>
+                        </a>
+                        <span>
+                          <small className="text-muted">400g</small>
+                        </span>
+                      </td>
+                      <td className="align-middle border-top-0">#14899</td>
+                      <td className="align-middle border-top-0">
+                        March 5, 2023
+                      </td>
+                      <td className="align-middle border-top-0">1</td>
+                      <td className="align-middle border-top-0">
+                        <span className="custom-badge  badge bg-warning">
+                          Processing
+                        </span>
+                      </td>
+                      <td className="align-middle border-top-0">$15.00</td>
+                      <td className="align-middle border-top-0">
+                        <a className="text-inherit" href="">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                          </svg>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="align-middle border-top-0">
+                        <a href="">
+                          <img
+                            src="img/products/product-img-2.jpg"
+                            alt=""
+                            className="icon-shape icon-xl"
+                          />
+                        </a>
+                      </td>
+                      <td className="align-middle border-top-0">
+                        <a className="fw-semibold text-inherit" href="">
+                          <h6 className="mb-0">Nutri Choise Biscuit</h6>
+                        </a>
+                        <span>
+                          <small className="text-muted">2 Pkt</small>
+                        </span>
+                      </td>
+                      <td className="align-middle border-top-0">#14658</td>
+                      <td className="align-middle border-top-0">
+                        {" "}
+                        July 9, 2023
+                      </td>
+                      <td className="align-middle border-top-0">2</td>
+                      <td className="align-middle border-top-0">
+                        <span className="custom-badge  badge bg-success">
+                          Completed
+                        </span>
+                      </td>
+                      <td className="align-middle border-top-0">$45.00</td>
+                      <td className="align-middle border-top-0">
+                        <a className="text-inherit" href="">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                          </svg>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </section>
   );
 }

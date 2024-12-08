@@ -1,0 +1,28 @@
+#fade_modal {
+  display: block;
+  padding-right: 15px;
+}
+.slick-list {
+  padding: 0px 0%;
+}
+.slick-track {
+  width: 6994px;
+  opacity: 1;
+  /* transform: translate3d(-538px, 0px, 0px); */
+}
+.slick-slide .slick-cloned {
+  width: 538px;
+}
+.slick-slide,
+.slick-slide .slick-active .slick-current {
+  outline: none;
+  width: 538px;
+}
+#productModal {
+  width: 100%;
+  display: inline-block;
+}
+.zoom {
+  /* background-image: url(./img/products/product-single-img-1.jpg); */
+  background-position: 50% 50%;
+}

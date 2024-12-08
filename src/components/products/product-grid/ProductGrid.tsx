@@ -1,26 +1,39 @@
+"use client";
 import { Product } from "@/interfaces/product.interface";
 import { ProductGridItem } from "./ProductGridItem";
 import SidebarProduct from "@/components/sidebar-product/SidebarProduct";
+import React, { useState, useEffect } from "react";
 
 interface Props {
   products: Product[];
+  productQuery: string;
 }
 
-export const ProductGrid = ({ products }: Props) => {
+export const ProductGrid = ({ products, productQuery }: Props) => {
+  const filteredProduct = products.filter((product) =>
+    product.title.toLowerCase().includes(productQuery.toLowerCase())
+  );
+
+  const filtered = filteredProduct || products;
+
+  console.log("busqueda: ", filtered);
+
   return (
-    <div className="flex flex-wrap flex-col lg:flex-row -mx-4">
-      <SidebarProduct></SidebarProduct>
-      <div id="shoptab" className="flex-1">
-        <div className="mt-10">
-          <div className="shop-tab-content active" id="grid">
-            <div className="flex flex-wrap -mb-7 -px-4">
-              {products.map((product) => (
-                <ProductGridItem product={product}></ProductGridItem>
-              ))}
+    <section className="my-lg-14 my-8">
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <div className="mb-8">
+              <h3 className="mb-0">Shop by Category</h3>
             </div>
           </div>
         </div>
+        <div className="g-6 row row-cols-xxl-6 row-cols-lg-4 row-cols-md-3 row-cols-2">
+          {filtered.map((product) => (
+            <ProductGridItem product={product}></ProductGridItem>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };

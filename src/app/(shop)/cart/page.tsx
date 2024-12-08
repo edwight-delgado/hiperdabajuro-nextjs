@@ -1,220 +1,220 @@
 "use client";
-import { QuantitySelector } from "@/components";
-import { useCartStore } from "@/store";
+
 import Image from "next/image";
-import TotalProductsCart from "@/middleware/totalProductsCart";
-import { useState } from "react";
+import { useCartStore, useUIStore } from "@/store";
+import useFromStore from "@/components/cart/useFromStore";
+import clsx from "clsx";
+import { QuantitySelector, ShoppingCart } from "@/components";
+import { Product } from "@/interfaces/product.interface";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function () {
-  const cart = useCartStore((state) => state.cart);
-  const RemoveItem = useCartStore((state) => state.removeFromCart);
-  //const products = initialData.products
-  let total = 0;
-  total = TotalProductsCart(cart);
+  const cart = useFromStore(useCartStore, (state) => state.cart);
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
 
-  function handleGetQuantity(quantity: number) {
-    if (total < 1) {
-      return;
-    }
-    const [nquantity, setQuantity] = useState(quantity);
-    setQuantity(nquantity);
+  let total = 0;
+  if (cart) {
+    total = cart.reduce(
+      (acc, product) => acc + product.price * (product.quantity as number),
+      0
+    );
   }
 
+  const updateQty = useCartStore((state) => state.updateQuantity);
+  //product["quantity"] = 1;
+  const [forceUpdate, setForceUpdate] = useState(false);
+  function handleGetQuantity(quantity: number, id: number) {
+    const prod = cart?.filter((item) => item.id == id);
+    if (!prod) {
+      return;
+    }
+
+    prod[0]["quantity"] = quantity;
+
+    updateQty(prod[0], quantity);
+
+    console.log("product:", prod, "produc:", prod[0].quantity);
+
+    setForceUpdate(!forceUpdate);
+  }
   return (
     <>
-      <div className="py-24">
+      <section className="mb-lg-14 mb-8 mt-8">
         <div className="container">
-          <div className="grid grid-cols-1 gap-x-5">
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-max">
-                <thead>
-                  <tr>
-                    <th className="bg-gray-300 p-3 border border-solid border-gray-600 text-center font-medium text-sm capitalize">
-                      Image
-                    </th>
-                    <th className="bg-gray-300 p-3 border border-solid border-gray-600 text-center font-medium text-sm capitalize">
-                      Product
-                    </th>
-                    <th className="bg-gray-300 p-3 border border-solid border-gray-600 text-center font-medium text-sm capitalize">
-                      Price
-                    </th>
-                    <th className="bg-gray-300 p-3 border border-solid border-gray-600 text-center font-medium text-sm capitalize">
-                      Quantity
-                    </th>
-                    <th className="bg-gray-300 p-3 border border-solid border-gray-600 text-center font-medium text-sm capitalize">
-                      Total
-                    </th>
-                    <th className="bg-gray-300 p-3 border border-solid border-gray-600 text-center font-medium text-sm capitalize">
-                      Remove
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {cart.map((product) => (
-                    <tr key={product.id}>
-                      <td className="w-32 p-3 border border-solid border-gray-600 text-center">
-                        <a href="#">
-                          <Image
-                            src={`/img/product/${product.images[0]}`}
-                            alt="product image"
-                            width={103}
-                            height={114}
-                          />
-                        </a>
-                      </td>
-                      <td className="p-3 border border-solid border-gray-600 text-center">
-                        <a
-                          href="#"
-                          className="transition-all hover:text-orange"
-                        >
-                          {product.title}
-                        </a>
-                      </td>
-                      <td className="p-3 border border-solid border-gray-600 text-center">
-                        <span>
-                          <span>${product.price}</span>
-                        </span>
-                      </td>
-                      <td className="p-3 border border-solid border-gray-600 text-center">
-                        <QuantitySelector
-                          quantity={product.quantity}
-                          onGetQuantity={handleGetQuantity}
-                        ></QuantitySelector>
-                      </td>
-                      <td className="p-3 border border-solid border-gray-600 text-center">
-                        <span>${product.price * product.quantity}</span>
-                      </td>
-                      <td className="p-3 border border-solid border-gray-600 text-center">
-                        <a
-                          href="#"
-                          className="inline-block mx-1 hover:text-orange transition-all"
-                        >
-                          <i className="icon-pencil"></i>
-                        </a>
-                        <a
-                          onClick={() => RemoveItem(product)}
-                          href="#"
-                          className="inline-block mx-1 hover:text-orange transition-all"
-                        >
-                          <i className="icon-close"></i>
-                        </a>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-      <section className="pb-24">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-5">
-            <div>
-              <div>
-                <h3 className="text-md font-semibold capitalize mb-8">
-                  calculate shipping
-                </h3>
-                <form action="#">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5">
-                    <div className="col-span-2 sm:col-span-1">
-                      <select className="border border-solid border-gray-300 bg-transparent w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base">
-                        <option>Select country</option>
-                        <option>Azerbaijan</option>
-                        <option>Bahamas</option>
-                        <option>Bahrain</option>
-                        <option>Bangladesh</option>
-                        <option>Barbados</option>
-                      </select>
-                    </div>
-
-                    <div className="col-span-2 sm:col-span-1">
-                      <select className="border border-solid border-gray-300 bg-transparent w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base">
-                        <option>Select State</option>
-                        <option>Azerbaijan</option>
-                        <option>Bahamas</option>
-                        <option>Bahrain</option>
-                        <option>Bangladesh</option>
-                        <option>Barbados</option>
-                      </select>
-                    </div>
-
-                    <div className="col-span-2 sm:col-span-1">
-                      <input
-                        className="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base"
-                        placeholder="Postcode / ZIP"
-                        type="text"
-                      />
-                    </div>
-
-                    <div className="col-span-2 sm:col-span-1">
-                      <a
-                        href="#"
-                        className="inline-block bg-dark leading-none py-4 px-5 md:px-8 text-sm text-white transition-all hover:bg-orange uppercase font-semibold hover:text-white mb-5 sm:mb-0"
-                      >
-                        estimate
-                      </a>
-                    </div>
-
-                    <div className="col-span-2">
-                      <h3 className="text-md font-semibold capitalize mb-8">
-                        Discount coupon Code
-                      </h3>
-                    </div>
-
-                    <div className="col-span-2 sm:col-span-1">
-                      <input
-                        className="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base"
-                        placeholder="coupon Code"
-                        type="text"
-                      />
-                    </div>
-
-                    <div className="col-span-2 sm:col-span-1">
-                      <a
-                        href="#"
-                        className="inline-block bg-dark leading-none py-4 px-5 md:px-8 text-sm text-white transition-all hover:bg-orange uppercase font-semibold hover:text-white mb-8 sm:mb-0"
-                      >
-                        apply code
-                      </a>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <div className="mt-4 lg:mt-0">
-              <div className="bg-gray-700 p-10">
-                <ul className="flex flex-wrap items-center justify-between">
-                  <li className="text-base font-semibold">Product</li>
-                  <li className="text-base font-semibold">Total</li>
-                </ul>
-
-                <ul className="flex flex-wrap items-center justify-between">
-                  <li className="text-base font-semibold">Shipping</li>
-                  <li className="text-base font-semibold">Free shipping</li>
-                </ul>
-                <div className="border-t border-b border-gray-600 py-5 mt-5">
-                  <ul className="flex flex-wrap items-center justify-between">
-                    <li className="text-base font-semibold">Total</li>
-                    <li className="text-base font-semibold text-orange">
-                      ${total}
-                    </li>
-                  </ul>
+          <div className="row">
+            <div className="col-12">
+              <div className="py-1 border-0 mb-8 card">
+                <div>
+                  <h1 className="fw-bold">Carrito de Compras</h1>
                 </div>
               </div>
-              <div className="mt-8">
-                <a
-                  href="#"
-                  className="inline-block bg-dark leading-none py-4 px-5 md:px-8 text-sm text-white transition-all hover:bg-orange uppercase font-semibold hover:text-white"
-                >
-                  Update Cart
-                </a>
-                <a
-                  href="#"
-                  className="inline-block bg-dark leading-none py-4 px-5 md:px-8 text-sm text-white transition-all hover:bg-orange uppercase font-semibold hover:text-white ml-4"
-                >
-                  checkout
-                </a>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-8 col-md-7">
+              <div className="py-3">
+                <ul className="list-group list-group-flush">
+                  {cart?.map((product) => (
+                    <li className="py-3 ps-0 border-top list-group-item">
+                      <div className="align-items-center undefined row">
+                        <div className="col-lg-7 col-md-6 col-6">
+                          <div className="d-flex">
+                            <Image
+                              src={`/img/products/${product.images[0]}`}
+                              alt={product.title}
+                              loading="lazy"
+                              width={64}
+                              height={64}
+                              className="icon-shape icon-xxl"
+                            />
+                            <div className="ms-3">
+                              <a className="text-inherit" href="">
+                                <h6 className="mb-0">{product.title}</h6>
+                              </a>
+                              <span>
+                                <small className="text-muted"></small>
+                              </span>
+                              <div className="mt-2 small lh-1">
+                                <a
+                                  onClick={() => removeFromCart(product)}
+                                  className="text-decoration-none text-inherit"
+                                  href="#!"
+                                >
+                                  <span className="me-1 align-text-bottom">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="14"
+                                      height="14"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      className="text-success"
+                                    >
+                                      <polyline points="3 6 5 6 21 6"></polyline>
+                                      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                      <line
+                                        x1="10"
+                                        y1="11"
+                                        x2="10"
+                                        y2="17"
+                                      ></line>
+                                      <line
+                                        x1="14"
+                                        y1="11"
+                                        x2="14"
+                                        y2="17"
+                                      ></line>
+                                    </svg>
+                                  </span>
+                                  <span className="text-muted">Eliminar</span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-lg-3 col-md-3 col-4">
+                          <QuantitySelector
+                            id={product.id}
+                            quantity={product.quantity}
+                            onGetQuantity={handleGetQuantity}
+                          ></QuantitySelector>
+                        </div>
+                        <div className="text-center col-md-2 col-2">
+                          <span className="fw-bold">
+                            ${product.price * product.quantity}
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-5 col-12">
+              <div className="mb-5 mt-6 card">
+                <div className="p-6 card-body">
+                  <h2 className="h5 mb-4">Resumen</h2>
+                  <div className="mb-2 card">
+                    <div className="list-group list-group-flush">
+                      <div className="d-flex justify-content-between align-items-start list-group-item">
+                        <div className="me-auto">
+                          <div className="">Item Subtotal</div>
+                        </div>
+                        <span className="">$93.55</span>
+                      </div>
+                      <div className="d-flex justify-content-between align-items-start list-group-item">
+                        <div className="me-auto">
+                          <div className="">Tarifa de envío</div>
+                        </div>
+                        <span className="">$0.00</span>
+                      </div>
+                      <div className="d-flex justify-content-between align-items-start list-group-item">
+                        <div className="me-auto">
+                          <div className="">Impuesto IVA 12%</div>
+                        </div>
+                        <span className="">$16.84</span>
+                      </div>
+                      <div className="d-flex justify-content-between align-items-start list-group-item">
+                        <div className="me-auto">
+                          <div className="fw-bold">Subtotal</div>
+                        </div>
+                        <span className="fw-bold">$110.39</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="d-grid mb-1 mt-4">
+                    <Link
+                      role="button"
+                      className="d-flex justify-content-between align-items-center btn btn-primary btn-lg"
+                      href="/cart/checkout"
+                    >
+                      Procesar Pedidos
+                      <span className="fw-bold">${total}</span>
+                    </Link>
+                  </div>
+                  <p>
+                    <small>
+                      Al realizar su pedido, usted acepta estar sujeto a los{" "}
+                      <a href="#">Términos de servicio</a> y{" "}
+                      <a href="">la Política de privacidad</a> de hipermercado.
+                    </small>
+                  </p>
+                  <div className="mt-8">
+                    <h2 className="h5 mb-3">Add Promo or Gift Card</h2>
+                    <form className="">
+                      <div className="mb-2">
+                        <label
+                          className="sr-only form-label"
+                          htmlFor="giftcard"
+                        >
+                          Email address
+                        </label>
+                        <input
+                          placeholder="Promo or Gift Card"
+                          type="text"
+                          id="giftcard"
+                          className="form-control"
+                          value=""
+                        />
+                      </div>
+                      <div className="d-grid">
+                        <button
+                          type="submit"
+                          className="mb-1 btn btn-outline-dark"
+                        >
+                          Redeem
+                        </button>
+                      </div>
+                      <p className="text-muted mb-0">
+                        <small>Terms &amp; Conditions apply</small>
+                      </p>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
