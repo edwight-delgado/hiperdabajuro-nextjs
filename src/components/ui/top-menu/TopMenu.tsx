@@ -6,6 +6,7 @@ import { useCartStore, useUIStore } from "@/store";
 //import Providers from "@/middleware/providers";
 //import TotalProductsCart from "@/middleware/totalProductsCart";
 import Search from "@/components/search/search";
+import Image from "next/image";
 
 export const TopMenu = () => {
   const openSideMenu = useUIStore((state) => state.openSideMenu);
@@ -33,8 +34,8 @@ export const TopMenu = () => {
             </div>
             <div className="d-flex justify-content-between w-100 d-lg-none">
               <a className="navbar-brand" href="/">
-                <img
-                  src="/img/logo/freshcart-logo.svg"
+                <Image
+                  src="/img/logo/shopping-logo.svg"
                   alt="Fresh Cart"
                   className=""
                 />
