@@ -12,8 +12,6 @@ export * from "./ui/modal/productModal";
 
 export * from "./product/quantity-selector/QuantitySelector";
 
-export * from "./ui/social-media-auth";
-
 export * from "./ui/breadcrumb/TopBreadCrumb";
 
 export * from "./dashboard/sidebar/sidebarLayout";
