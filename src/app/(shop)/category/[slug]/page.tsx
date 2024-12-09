@@ -1,6 +1,8 @@
 import { initialData } from "@/app/seed/seed";
 
 import { ProductGrid, ProductModal, ShoppingCart } from "@/components";
+
+import { Suspense } from "react";
 //import { CategoryGrid } from "@/components/categories-grid/CategoryGrid";
 
 //import Providers from "@/middleware/providers";
@@ -58,8 +60,9 @@ export default function Category({ params, searchParams }: Props) {
             <h2 className="mb-0 fs-1">{slug}</h2>
           </div>
         </div>
-
-        <ProductGrid products={products} productQuery={query}></ProductGrid>
+        <Suspense fallback={<>Loading...</>}>
+          <ProductGrid products={products} productQuery={query}></ProductGrid>
+        </Suspense>
       </main>
       <ShoppingCart></ShoppingCart>
       <ProductModal></ProductModal>
