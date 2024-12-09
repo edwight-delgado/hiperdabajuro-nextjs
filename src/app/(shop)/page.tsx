@@ -2,6 +2,7 @@ import { initialData } from "../seed/seed";
 import { initialDataCat } from "../seed/seedCategory";
 import { ProductGrid, ProductModal, ShoppingCart } from "@/components";
 import { CategoryGrid } from "@/components/categories-grid/CategoryGrid";
+import MobileNav from "@/components/ui/top-menu/mobile-nav";
 import { Suspense } from "react";
 
 const products = initialData.products;
@@ -27,6 +28,7 @@ export default function Home({
       </main>
       <ShoppingCart></ShoppingCart>
       <ProductModal></ProductModal>
+      <MobileNav></MobileNav>
     </div>
   );
 }

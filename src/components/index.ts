@@ -19,3 +19,5 @@ export * from "./dashboard/sidebar/sidebarLayout";
 export * from "./search/search";
 
 export * from "./checkout/address";
+
+export * from "./ui/top-menu/mobile-nav";

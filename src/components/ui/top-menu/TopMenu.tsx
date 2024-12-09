@@ -1,16 +1,19 @@
 "use client";
 
-import { useCartStore, useUIStore } from "@/store";
+import { useCartStore, useUIMobileMenuStore, useUIStore } from "@/store";
 //import Link from "next/link";
 
 //import Providers from "@/middleware/providers";
 //import TotalProductsCart from "@/middleware/totalProductsCart";
 import Search from "@/components/search/search";
 import Image from "next/image";
+import Link from "next/link";
 
 export const TopMenu = () => {
   const openSideMenu = useUIStore((state) => state.openSideMenu);
-
+  const openSideMenuMobile = useUIMobileMenuStore(
+    (state) => state.openSideMobileMenu
+  );
   const cart = useCartStore((state) => state.cart);
 
   return (
@@ -89,22 +92,24 @@ export const TopMenu = () => {
                     </a>
                   </div>
                 </div>
-                <button
-                  type="button"
-                  aria-label="Toggle navigation"
-                  className="navbar-toggler collapsed"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    width="32"
-                    height="32"
-                    fill="currentColor"
-                    className="bi bi-text-indent-left text-primary"
+                <Link href={"#"} onClick={() => openSideMenuMobile()}>
+                  <button
+                    type="button"
+                    aria-label="Toggle navigation"
+                    className="navbar-toggler collapsed"
                   >
-                    <path d="M2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m.646 2.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L4.293 8 2.646 6.354a.5.5 0 0 1 0-.708M7 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m-5 3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"></path>
-                  </svg>
-                </button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      width="32"
+                      height="32"
+                      fill="currentColor"
+                      className="bi bi-text-indent-left text-primary"
+                    >
+                      <path d="M2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m.646 2.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L4.293 8 2.646 6.354a.5.5 0 0 1 0-.708M7 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m-5 3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"></path>
+                    </svg>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
