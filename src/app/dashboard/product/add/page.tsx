@@ -2,9 +2,9 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-import { useReducer, useState } from "react";
+import { useState } from "react";
 
-export default function () {
+export default function Add() {
   const [titulo, setTitulo] = useState("");
   const [email, setEmail] = useState("");
   const router = useRouter();
@@ -50,7 +50,7 @@ export default function () {
         className="row"
         onSubmit={async (e) => {
           e.preventDefault();
-          let name = titulo;
+          const name = titulo;
           console.log(titulo);
           const res = await fetch("/dashboard/api/product", {
             method: "POST",

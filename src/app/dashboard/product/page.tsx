@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-async function loadProduct() {
-  //const res = await fetch("http://localhost:3000/api/product");
-  //const data = await res.json();
-  //console.log("data api", data);
-  //return data;
-}
-export default async function () {
+//async function loadProduct() {
+//const res = await fetch("http://localhost:3000/api/product");
+//const data = await res.json();
+//console.log("data api", data);
+//return data;
+//}
+export default async function Products() {
   //let users = await loadProduct();
 
   return (

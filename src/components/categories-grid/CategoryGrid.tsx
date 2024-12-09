@@ -17,7 +17,7 @@ export const CategoryGrid = ({ categorys }: Props) => {
         </div>
         <div className="g-4 row row-cols-lg-5 row-cols-md-3 row-cols-2">
           {categorys.map((category) => (
-            <CategoryItem category={category}></CategoryItem>
+            <CategoryItem key={category.id} category={category}></CategoryItem>
           ))}
         </div>
       </div>

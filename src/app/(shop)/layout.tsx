@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+
 import "../globals.css";
 import { TopMenu } from "@/components";
 import NavMenu from "@/components/ui/top-menu/nav";

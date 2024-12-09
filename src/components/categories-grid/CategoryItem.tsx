@@ -1,17 +1,12 @@
 "use client";
 import { Category } from "@/interfaces/category.interface";
-import { useCartStore, useUIModalProductStore } from "@/store";
+
 import Image from "next/image";
 import Link from "next/link";
 interface Props {
   category: Category;
 }
 export const CategoryItem = ({ category }: Props) => {
-  const addToCart = useCartStore((state) => state.addToCart);
-  const openSideModalProduct = useUIModalProductStore(
-    (state) => state.openSideModalProduct
-  );
-
   return (
     <div key={category.id} className="col1">
       <Link

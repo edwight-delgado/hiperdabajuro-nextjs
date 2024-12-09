@@ -1,14 +1,7 @@
 import { initialData } from "../seed/seed";
 import { initialDataCat } from "../seed/seedCategory";
-import {
-  ProductGrid,
-  ProductModal,
-  ShoppingCart,
-  TopBreadCrumb,
-} from "@/components";
+import { ProductGrid, ProductModal, ShoppingCart } from "@/components";
 import { CategoryGrid } from "@/components/categories-grid/CategoryGrid";
-
-import Providers from "@/middleware/providers";
 
 const products = initialData.products;
 const category = initialDataCat.categories;
@@ -26,9 +19,6 @@ export default function Home({
   return (
     <div className="py-24">
       <main className="container">
-        <Providers>
-          <TopBreadCrumb></TopBreadCrumb>
-        </Providers>
         <CategoryGrid categorys={category}></CategoryGrid>
         <ProductGrid products={products} productQuery={query}></ProductGrid>
       </main>

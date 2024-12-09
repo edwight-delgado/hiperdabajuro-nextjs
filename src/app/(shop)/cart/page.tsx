@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useCartStore, useUIStore } from "@/store";
+import { useCartStore } from "@/store";
 import useFromStore from "@/components/cart/useFromStore";
-import clsx from "clsx";
-import { QuantitySelector, ShoppingCart } from "@/components";
-import { Product } from "@/interfaces/product.interface";
-import { useEffect, useState } from "react";
+//import clsx from "clsx";
+import { QuantitySelector } from "@/components";
+//import { Product } from "@/interfaces/product.interface";
+import { useState } from "react";
 import Link from "next/link";
 
 export default function () {
@@ -56,7 +56,10 @@ export default function () {
               <div className="py-3">
                 <ul className="list-group list-group-flush">
                   {cart?.map((product) => (
-                    <li className="py-3 ps-0 border-top list-group-item">
+                    <li
+                      key={product.id}
+                      className="py-3 ps-0 border-top list-group-item"
+                    >
                       <div className="align-items-center undefined row">
                         <div className="col-lg-7 col-md-6 col-6">
                           <div className="d-flex">

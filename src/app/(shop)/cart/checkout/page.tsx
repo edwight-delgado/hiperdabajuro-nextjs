@@ -1,6 +1,6 @@
 import Address from "@/components/checkout/address";
 
-export default function () {
+export default function Checkout() {
   return (
     <>
       <div className="mt-4">
@@ -109,7 +109,7 @@ export default function () {
                             />
                           </div>
                           <div className="col-md-5 col-5">
-                            <h6 className="mb-0">Haldiram's Sev Bhujia</h6>
+                            <h6 className="mb-0">Haldiram Sev Bhujia</h6>
                             <span>
                               <small className="text-muted"></small>
                             </span>

@@ -1,8 +1,7 @@
 "use client";
 import { Product } from "@/interfaces/product.interface";
 import { ProductGridItem } from "./ProductGridItem";
-import SidebarProduct from "@/components/sidebar-product/SidebarProduct";
-import React, { useState, useEffect } from "react";
+//import SidebarProduct from "@/components/sidebar-product/SidebarProduct";
 
 interface Props {
   products: Product[];
@@ -30,7 +29,10 @@ export const ProductGrid = ({ products, productQuery }: Props) => {
         </div>
         <div className="g-6 row row-cols-xxl-6 row-cols-lg-4 row-cols-md-3 row-cols-2">
           {filtered.map((product) => (
-            <ProductGridItem product={product}></ProductGridItem>
+            <ProductGridItem
+              key={product.id}
+              product={product}
+            ></ProductGridItem>
           ))}
         </div>
       </div>

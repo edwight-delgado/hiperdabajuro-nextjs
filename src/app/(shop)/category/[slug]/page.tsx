@@ -1,14 +1,9 @@
 import { initialData } from "@/app/seed/seed";
 
-import {
-  ProductGrid,
-  ProductModal,
-  ShoppingCart,
-  TopBreadCrumb,
-} from "@/components";
-import { CategoryGrid } from "@/components/categories-grid/CategoryGrid";
+import { ProductGrid, ProductModal, ShoppingCart } from "@/components";
+//import { CategoryGrid } from "@/components/categories-grid/CategoryGrid";
 
-import Providers from "@/middleware/providers";
+//import Providers from "@/middleware/providers";
 
 const products = initialData.products;
 
@@ -24,7 +19,7 @@ interface Props {
 }
 const seedProduct = initialData.products;
 
-export default function ({ params, searchParams }: Props) {
+export default function Category({ params, searchParams }: Props) {
   const { slug } = params;
   const products = seedProduct.filter((product) => product.category == slug);
 

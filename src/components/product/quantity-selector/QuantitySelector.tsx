@@ -1,6 +1,6 @@
 "use client";
 import { initialData } from "@/app/seed/seed";
-import { Product } from "@/interfaces/product.interface";
+//import { Product } from "@/interfaces/product.interface";
 import { useState } from "react";
 
 interface Props {

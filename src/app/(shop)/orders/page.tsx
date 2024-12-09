@@ -1,4 +1,4 @@
-export default function () {
+export default function Orders() {
   return (
     <section>
       <div className="container">
@@ -234,9 +234,7 @@ export default function () {
                       </td>
                       <td className="align-middle border-top-0">
                         <a className="fw-semibold text-inherit" href="">
-                          <h6 className="mb-0">
-                            Haldiram's Nagpur Aloo Bhujia
-                          </h6>
+                          <h6 className="mb-0">Haldiram Nagpur Aloo Bhujia</h6>
                         </a>
                         <span>
                           <small className="text-muted">400g</small>

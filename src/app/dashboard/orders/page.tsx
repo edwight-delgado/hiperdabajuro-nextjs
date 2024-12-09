@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function () {
+export default function Orders() {
   return (
     <div className="container">
       <div className="mb-5 row">
