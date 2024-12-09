@@ -1,7 +1,7 @@
 import Link from "next/link";
 import "./dash.css";
 
-export default function () {
+export default function Dashboard() {
   return (
     <div className="container">
       <div className="mb-8 row">

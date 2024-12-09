@@ -1,4 +1,4 @@
-export default function () {
+export default function ordersById() {
   return (
     <div className="container">
       <div className="mb-5 row"></div>
@@ -133,7 +133,7 @@ export default function () {
                               </div>
                               <div className="ms-lg-4 mt-2 mt-lg-0">
                                 <h5 className="mb-0 h6">
-                                  Haldiram's Sev Bhujia
+                                  Haldirams Sev Bhujia
                                 </h5>
                               </div>
                             </div>
