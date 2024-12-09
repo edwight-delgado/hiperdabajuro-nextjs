@@ -18,6 +18,4 @@ export * from "./dashboard/sidebar/sidebarLayout";
 
 export * from "./search/search";
 
-export * from "./ui/quantity/quantity";
-
 export * from "./checkout/address";
