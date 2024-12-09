@@ -168,7 +168,7 @@ export default function Orders() {
                       </td>
                       <td className="align-middle border-top-0">
                         <img
-                          src="/images/products/product-img-2.jpg"
+                          src="/img/products/product-img-2.jpg"
                           alt=""
                           className="icon-shape icon-md"
                         />
