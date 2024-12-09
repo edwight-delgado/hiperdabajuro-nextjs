@@ -5,8 +5,8 @@ import { useCartStore, useUIStore } from "@/store";
 import useFromStore from "./useFromStore";
 import clsx from "clsx";
 import { QuantitySelector } from "../product/quantity-selector/QuantitySelector";
-import { Product } from "@/interfaces/product.interface";
-import { useEffect, useState } from "react";
+//import { Product } from "@/interfaces/product.interface";
+import { useState } from "react";
 import Link from "next/link";
 
 export function ShoppingCart() {
@@ -93,7 +93,10 @@ export function ShoppingCart() {
             </li>
 
             {cart?.map((product) => (
-              <li className="py-3 ps-0 border-bottom list-group-item">
+              <li
+                key={product.id}
+                className="py-3 ps-0 border-bottom list-group-item"
+              >
                 <div className="align-items-center undefined row">
                   <div className="col-lg-7 col-md-6 col-6">
                     <div className="d-flex">

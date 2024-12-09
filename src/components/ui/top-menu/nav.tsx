@@ -4,12 +4,6 @@ import { useUIMobileMenuStore } from "@/store";
 import Link from "next/link";
 
 export default function NavMenu() {
-  const closeSideMobileMenu = useUIMobileMenuStore(
-    (state) => state.closeSideMobileMenu
-  );
-  const isSideMobileMenuOpen = useUIMobileMenuStore(
-    (state) => state.isSideMobileMenuOpen
-  );
   return (
     <>
       <nav className="py-0 py-lg-2 navbar-default navbar navbar-expand-lg navbar-dark bg-primary">

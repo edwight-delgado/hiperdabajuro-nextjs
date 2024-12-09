@@ -9,11 +9,8 @@ import Search from "@/components/search/search";
 
 export const TopMenu = () => {
   const openSideMenu = useUIStore((state) => state.openSideMenu);
-  const openSideMobileMenu = useUIMobileMenuStore(
-    (state) => state.openSideMobileMenu
-  );
+
   const cart = useCartStore((state) => state.cart);
-  let total = TotalProductsCart(cart);
 
   return (
     <header className="py-lg-5 py-4 px-0 border-bottom border-bottom-lg-0">

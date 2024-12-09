@@ -1,4 +1,4 @@
-import { initialData } from "@/app/seed/seed";
+//import { initialData } from "@/app/seed/seed";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -76,7 +76,7 @@ export const useCartStore = create(
         const quantity = product.quantity + qty;
         if (cartItem) {
           if (quantity >= 1) {
-            const updatedCart = [...cart, { ...product, quantity: 1 }];
+            //const updatedCart = [...cart, { ...product, quantity: 1 }];
             set((state) => ({
               //cart: updatedCart,
 

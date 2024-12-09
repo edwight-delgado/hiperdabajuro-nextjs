@@ -1,11 +1,11 @@
 "use client";
 import { initialData } from "@/app/seed/seed";
 import { useCartStore, useUIModalProductStore } from "@/store";
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 import Image from "next/image";
 import "./style.css";
 
-import { QuantitySelector } from "@/components/product/quantity-selector/QuantitySelector";
+//import { QuantitySelector } from "@/components/product/quantity-selector/QuantitySelector";
 
 export const ProductModal = () => {
   const closeSideModalProduct = useUIModalProductStore(
@@ -19,7 +19,7 @@ export const ProductModal = () => {
   const product = initialData.products.find(
     (product) => product.slug == slugState
   );
-  const updateQty = useCartStore((state) => state.updateQuantity);
+  //const updateQty = useCartStore((state) => state.updateQuantity);
   if (!product) {
     //page no found
     return;
