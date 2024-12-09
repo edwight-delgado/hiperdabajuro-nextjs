@@ -1,10 +1,10 @@
 "use client";
 
-import { useCartStore, useUIMobileMenuStore, useUIStore } from "@/store";
+import { useCartStore, useUIStore } from "@/store";
 import Link from "next/link";
-import LoginButton from "./LoginButton";
-import Providers from "@/middleware/providers";
-import TotalProductsCart from "@/middleware/totalProductsCart";
+
+//import Providers from "@/middleware/providers";
+//import TotalProductsCart from "@/middleware/totalProductsCart";
 import Search from "@/components/search/search";
 
 export const TopMenu = () => {

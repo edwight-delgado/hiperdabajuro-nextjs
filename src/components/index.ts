@@ -12,15 +12,9 @@ export * from "./ui/modal/productModal";
 
 export * from "./product/quantity-selector/QuantitySelector";
 
-export * from "./sidebar-product/SidebarProduct";
-
 export * from "./ui/social-media-auth";
 
 export * from "./ui/breadcrumb/TopBreadCrumb";
-
-export * from "./ui/dropzone/dropzone";
-
-export * from "./ui/editor/Wysiwyg";
 
 export * from "./dashboard/sidebar/sidebarLayout";
 
