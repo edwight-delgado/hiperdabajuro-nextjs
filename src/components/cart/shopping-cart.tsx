@@ -162,13 +162,10 @@ export function ShoppingCart() {
               </li>
             ))}
           </ul>
-          <div className="d-flex justify-content-between mt-4">
-            <button type="button" className="btn btn-primary">
-              Continue Shopping
-            </button>
+        
             <Link href={"cart"}>
               <button type="button" className="btn btn-dark">
-                Proceed To Checkout
+                Procesar Pedido
               </button>
             </Link>
           </div>

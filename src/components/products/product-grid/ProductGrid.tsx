@@ -23,7 +23,7 @@ export const ProductGrid = ({ products, productQuery }: Props) => {
         <div className="row">
           <div className="col-12">
             <div className="mb-8">
-              <h3 className="mb-0">Shop by Category</h3>
+              <h3 className="mb-0">Productos</h3>
             </div>
           </div>
         </div>

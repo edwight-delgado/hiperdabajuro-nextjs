@@ -33,8 +33,8 @@ export const initialDataCat: SeedDataCat = {
       inStock: 7,
       quantity: 0,
 
-      slug: "Dairy_Bread_&_Eggs",
-      title: "Dairy, Bread & Eggs",
+      slug: "cuidado-personal",
+      title: "Cuidado Personal",
       tags: ["carne", "carniceria", "mejor"],
     },
     {

@@ -99,7 +99,6 @@ export const ProductGridItem = ({ product }: Props) => {
             <div className="d-flex justify-content-between align-items-center mt-3">
               <div>
                 <span className="text-dark">$ {product.price} </span>
-                <span className="text-dark">| Bsf 24</span>
               </div>
               <div>
                 <a

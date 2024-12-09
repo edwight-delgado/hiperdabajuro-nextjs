@@ -20,9 +20,11 @@ export const TopMenu = () => {
             <div className="d-flex align-items-center">
               <a className="d-none d-lg-block navbar-brand" href="/">
                 <img
-                  src="/img/logo/freshcart-logo.svg"
-                  alt="Fresh Cart"
+                  src="/img/logo/shopping-logo.svg"
+                  alt="Logo"
                   className=""
+                  width={60}
+                  height={60}
                 />
               </a>
               <div className="w-100 ms-4 d-none d-lg-block">
