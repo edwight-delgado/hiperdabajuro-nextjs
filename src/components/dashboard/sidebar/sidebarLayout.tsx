@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function SideBarLayout() {
@@ -6,10 +7,12 @@ export function SideBarLayout() {
       <div className="navbar-vertical">
         <div className="px-4 py-5 d-flex justify-content-between align-items-center">
           <a className="navbar-brand" href="/">
-            <img
-              src="/images/logo/freshcart-logo.svg"
-              alt="Fresh Cart"
-              className=""
+            <Image
+              src="/img/logo/shopping-logo.svg"
+              alt="Logo"
+              className="logo"
+              width={50}
+              height={50}
             />
           </a>
         </div>

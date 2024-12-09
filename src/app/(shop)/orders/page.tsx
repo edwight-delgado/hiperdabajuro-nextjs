@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Orders() {
   return (
     <section>
@@ -5,7 +7,7 @@ export default function Orders() {
         <div className="row">
           <div className="col-12">
             <div className="d-flex justify-content-between align-items-center d-md-none py-4">
-              <h3 className="fs-5 mb-0">Account Setting</h3>
+              <h3 className="fs-5 mb-0">Account Settig</h3>
               <button
                 type="button"
                 className="text-muted d-md-none btn-icon btn-sm ms-3 btn btn-outline-gray-400"
@@ -48,7 +50,7 @@ export default function Orders() {
                       <line x1="3" y1="6" x2="21" y2="6"></line>
                       <path d="M16 10a4 4 0 0 1-8 0"></path>
                     </svg>{" "}
-                    Your Orders
+                    Tus Pedidos
                   </a>
                 </li>
                 <li className="nav-item">
@@ -72,7 +74,7 @@ export default function Orders() {
                       <circle cx="12" cy="12" r="3"></circle>
                       <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
                     </svg>{" "}
-                    Settings
+                    Configuración
                   </a>
                 </li>
                 <li className="nav-item">
@@ -96,7 +98,7 @@ export default function Orders() {
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                       <circle cx="12" cy="10" r="3"></circle>
                     </svg>{" "}
-                    Address
+                    Dirección
                   </a>
                 </li>
                 <li className="nav-item">
@@ -127,7 +129,7 @@ export default function Orders() {
                       ></rect>
                       <line x1="1" y1="10" x2="23" y2="10"></line>
                     </svg>{" "}
-                    Payment Method
+                    Metodo de Pago
                   </a>
                 </li>
                 <li className="nav-item">
@@ -151,7 +153,7 @@ export default function Orders() {
                       <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
                       <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                     </svg>{" "}
-                    Notification
+                    Notificación
                   </a>
                 </li>
                 <li className="nav-item">
@@ -273,10 +275,12 @@ export default function Orders() {
                     <tr>
                       <td className="align-middle border-top-0">
                         <a href="">
-                          <img
-                            src="img/products/product-img-2.jpg"
-                            alt=""
+                          <Image
+                            src="/img/products/product-img-2.jpg"
+                            alt="img"
                             className="icon-shape icon-xl"
+                            width={120}
+                            height={120}
                           />
                         </a>
                       </td>

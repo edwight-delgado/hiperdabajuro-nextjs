@@ -36,8 +36,8 @@ export default function Checkout() {
                 <div className="mb-8">
                   <h1 className="fw-bold mb-0">Verificación</h1>
                   <p className="mb-0">
-                    Already have an account? Click here to
-                    <a href="/signin"> Sign in</a>.
+                    ¿Ya tienes una cuenta? Haz clic aquí para
+                    <a href="/signin"> iniciar sesión </a>.
                   </p>
                 </div>
               </div>
@@ -74,7 +74,7 @@ export default function Checkout() {
                         type="button"
                         className="btn btn-outline-primary btn-sm"
                       >
-                        Add a new address
+                        Nueva Dirección
                       </button>
                     </div>
                     <div

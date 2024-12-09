@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Orders() {
@@ -105,10 +106,12 @@ export default function Orders() {
                         </div>
                       </td>
                       <td className="align-middle border-top-0">
-                        <img
-                          src="/images/products/product-img-1.jpg"
+                        <Image
+                          src="/img/products/product-img-1.jpg"
                           alt=""
                           className="icon-shape icon-md"
+                          width={120}
+                          height={120}
                         />
                       </td>
 
@@ -219,10 +222,12 @@ export default function Orders() {
                         </div>
                       </td>
                       <td className="align-middle border-top-0">
-                        <img
-                          src="/images/products/product-img-3.jpg"
+                        <Image
+                          src="/img/products/product-img-1.jpg"
                           alt=""
                           className="icon-shape icon-md"
+                          width={120}
+                          height={120}
                         />
                       </td>
                       <td className="align-middle border-top-0">FC#1005</td>
@@ -274,10 +279,12 @@ export default function Orders() {
                         </div>
                       </td>
                       <td className="align-middle border-top-0">
-                        <img
-                          src="/images/products/product-img-4.jpg"
+                        <Image
+                          src="/img/products/product-img-1.jpg"
                           alt=""
                           className="icon-shape icon-md"
+                          width={120}
+                          height={120}
                         />
                       </td>
                       <td className="align-middle border-top-0">FC#1004</td>
@@ -329,10 +336,12 @@ export default function Orders() {
                         </div>
                       </td>
                       <td className="align-middle border-top-0">
-                        <img
-                          src="/images/products/product-img-5.jpg"
+                        <Image
+                          src="/img/products/product-img-1.jpg"
                           alt=""
                           className="icon-shape icon-md"
+                          width={120}
+                          height={120}
                         />
                       </td>
                       <td className="align-middle border-top-0">FC#1003</td>
@@ -382,10 +391,12 @@ export default function Orders() {
                         </div>
                       </td>
                       <td className="align-middle border-top-0">
-                        <img
-                          src="/images/products/product-img-6.jpg"
+                        <Image
+                          src="/img/products/product-img-1.jpg"
                           alt=""
                           className="icon-shape icon-md"
+                          width={120}
+                          height={120}
                         />
                       </td>
                       <td className="align-middle border-top-0">FC#1002</td>
@@ -437,10 +448,12 @@ export default function Orders() {
                         </div>
                       </td>
                       <td className="align-middle border-top-0">
-                        <img
-                          src="/images/products/product-img-7.jpg"
+                        <Image
+                          src="/img/products/product-img-1.jpg"
                           alt=""
                           className="icon-shape icon-md"
+                          width={120}
+                          height={120}
                         />
                       </td>
                       <td className="align-middle border-top-0">FC#1001</td>
@@ -492,124 +505,15 @@ export default function Orders() {
                         </div>
                       </td>
                       <td className="align-middle border-top-0">
-                        <img
-                          src="/images/products/product-img-2.jpg"
+                        <Image
+                          src="/img/products/product-img-1.jpg"
                           alt=""
                           className="icon-shape icon-md"
+                          width={120}
+                          height={120}
                         />
                       </td>
                       <td className="align-middle border-top-0">FC#1006</td>
-                      <td className="align-middle border-top-0">
-                        Willie Hanson
-                      </td>
-                      <td className="align-middle border-top-0">
-                        20 April 2023 (9:20 am)
-                      </td>
-                      <td className="align-middle border-top-0">COD</td>
-                      <td className="align-middle border-top-0">
-                        <span className="custom-badge  badge text-dark-primary bg-light-primary">
-                          Success
-                        </span>
-                      </td>
-                      <td className="align-middle border-top-0">$8.19</td>
-                      <td className="align-middle border-top-0">
-                        <div className="dropdown">
-                          <a className="text-reset" href="#">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="18"
-                              height="18"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              className="fs-5"
-                            >
-                              <circle cx="12" cy="12" r="1"></circle>
-                              <circle cx="12" cy="5" r="1"></circle>
-                              <circle cx="12" cy="19" r="1"></circle>
-                            </svg>
-                          </a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="align-middle border-top-0">
-                        <div className="px-1">
-                          <div className="">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                            />
-                          </div>
-                        </div>
-                      </td>
-                      <td className="align-middle border-top-0">
-                        <img
-                          src="/images/products/product-img-3.jpg"
-                          alt=""
-                          className="icon-shape icon-md"
-                        />
-                      </td>
-                      <td className="align-middle border-top-0">FC#1005</td>
-                      <td className="align-middle border-top-0">
-                        Dori Stewart
-                      </td>
-                      <td className="align-middle border-top-0">
-                        11 March 2023 (7:12 pm)
-                      </td>
-                      <td className="align-middle border-top-0">Paypal</td>
-                      <td className="align-middle border-top-0">
-                        <span className="custom-badge  badge text-dark-warning bg-light-warning">
-                          Pending
-                        </span>
-                      </td>
-                      <td className="align-middle border-top-0">$8.19</td>
-                      <td className="align-middle border-top-0">
-                        <div className="dropdown">
-                          <a className="text-reset" href="#">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="18"
-                              height="18"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              className="fs-5"
-                            >
-                              <circle cx="12" cy="12" r="1"></circle>
-                              <circle cx="12" cy="5" r="1"></circle>
-                              <circle cx="12" cy="19" r="1"></circle>
-                            </svg>
-                          </a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="align-middle border-top-0">
-                        <div className="px-1">
-                          <div className="">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                            />
-                          </div>
-                        </div>
-                      </td>
-                      <td className="align-middle border-top-0">
-                        <img
-                          src="/images/products/product-img-2.jpg"
-                          alt=""
-                          className="icon-shape icon-md"
-                        />
-                      </td>
-                      <td className="align-middle border-top-0">FC#1006</td>
-
                       <td className="align-middle border-top-0">
                         Willie Hanson
                       </td>
