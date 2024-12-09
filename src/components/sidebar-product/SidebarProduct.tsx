@@ -1,7 +1,6 @@
 import { initialData } from "@/app/seed/seed";
-import { preinit } from "react-dom";
 
-export default function () {
+export default function Sidebar() {
   //const categories = initialData.products.find((product) => product.category);
   const categories = initialData.products
     .map((item) => item.category)
