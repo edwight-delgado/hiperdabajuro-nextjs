@@ -1,7 +1,7 @@
 "use client";
 
 import { useCartStore, useUIStore } from "@/store";
-import Link from "next/link";
+//import Link from "next/link";
 
 //import Providers from "@/middleware/providers";
 //import TotalProductsCart from "@/middleware/totalProductsCart";

@@ -9,7 +9,7 @@ import { QuantitySelector } from "@/components";
 import { useState } from "react";
 import Link from "next/link";
 
-export default function () {
+export default function Cart() {
   const cart = useFromStore(useCartStore, (state) => state.cart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
 

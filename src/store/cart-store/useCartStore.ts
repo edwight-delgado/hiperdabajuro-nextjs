@@ -70,7 +70,7 @@ export const useCartStore = create(
         }
       },
       updateQuantity(product: Product, qty: number) {
-        const cart = get().cart;
+        //const cart = get().cart;
         const cartItem = product.id;
 
         const quantity = product.quantity + qty;

@@ -126,10 +126,10 @@ export default async function Products() {
                         />
                       </td>
                       <td className="align-middle border-top-0">
-                        Haldiram's Sev Bhujia
+                        Haldirams Sev Bhujia
                       </td>
                       <td className="align-middle border-top-0">
-                        Snack &amp; Munchies
+                        Snack Munchies
                       </td>
                       <td className="align-middle border-top-0">
                         <span className="custom-badge  badge text-dark-primary bg-light-primary">

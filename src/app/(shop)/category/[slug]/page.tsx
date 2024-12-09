@@ -5,7 +5,7 @@ import { ProductGrid, ProductModal, ShoppingCart } from "@/components";
 
 //import Providers from "@/middleware/providers";
 
-const products = initialData.products;
+//const products = initialData.products;
 
 interface Props {
   params: {
