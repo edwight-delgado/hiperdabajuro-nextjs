@@ -36,8 +36,10 @@ export const TopMenu = () => {
               <a className="navbar-brand" href="/">
                 <Image
                   src="/img/logo/shopping-logo.svg"
-                  alt="Fresh Cart"
+                  alt="logo"
                   className=""
+                  width={50}
+                  height={50}
                 />
               </a>
               <div className="d-flex align-items-center lh-1">
